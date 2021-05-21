@@ -1,0 +1,64 @@
+# imv config
+
+[options]
+# mappings
+suppress_default_binds = true
+
+[binds]
+# exiting imv
+q = quit
+<Escape> = quit
+
+# navigation
+n = next
+<Right> = next
+p = prev
+<Left> = prev
+g = goto 0
+<Shift+G> = goto -1
+
+# panning
+j = pan 0 50
+k = pan 0 -50
+h = pan -50 0
+l = pan 50 0
+
+# zooming
+i = zoom 1
+<plus> = zoom 1
+o = zoom -1
+<minus> = zoom -1
+a = zoom actual
+
+# gif playback
+w = toggle_playing
+
+# slideshow 
+s = slideshow +3
+<Shift+S> = slideshow 0
+
+# slideshow time 
+t = slideshow +1
+<Shift+T> = slideshow -1
+
+# other commands
+x = close
+f = fullscreen
+e = overlay
+c = center
+r = reset
+
+# set the current image as wallpaper
+b = exec setbg -i
+
+# delete the current image
+<Shift+D> = exec rm $imv_current_file; close
+
+# rotate the current image by 90 degrees
+<Shift+R> = exec convert -rotate 90 $imv_current_file $imv_current_file
+
+# flip the current image 
+<Shift+X> = exec convert -flip $imv_current_file $imv_current_file
+
+# flop the current image 
+<Shift+Y> = exec convert -flop $imv_current_file $imv_current_file

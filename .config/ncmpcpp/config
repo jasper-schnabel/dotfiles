@@ -1,0 +1,233 @@
+# ncmpcpp config
+
+# directories
+ncmpcpp_directory = "~/.local/share/ncmpcpp"
+lyrics_directory = "~/.local/share/ncmpcpp/lyrics"
+
+# connection settings
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = "~/music"
+mpd_connection_timeout = 5
+
+# visualizer path
+visualizer_data_source = /tmp/mpd.fifo
+
+# visualizer name
+visualizer_output_name = "MPD Visualizer"
+
+# visualizer mode (stereo or mono)
+visualizer_in_stereo = yes
+
+# visualizer type
+# possible values are: 
+#   spectrum
+#   wave
+#   wave_filled
+#   ellipse
+visualizer_type = spectrum
+
+# visualizer frames per second
+visualizer_fps = 30
+
+# visualizer autoscale
+visualizer_autoscale = no
+
+# visualizer look
+visualizer_look = "❙❙"
+
+# visualizer colors
+visualizer_color = green, blue, blue, red, red, yellow, yellow, yellow, yellow
+
+# always use visualizer_look instead of the default 
+visualizer_spectrum_smooth_look = no
+
+# inactivity after playlist highlighting will be disabled (0 = always on)
+playlist_disable_highlight_delay = 0
+
+# how long messages are supposed to be visible
+message_delay_time = 5
+
+# various playlist settings
+playlist_shorten_total_times = yes
+playlist_separate_albums = yes
+
+# user user interface classic or alternative
+user_interface = alternative
+
+# use columns title display mode over 'classic' everywhe
+playlist_display_mode = columns
+browser_display_mode = columns
+search_engine_display_mode = columns
+playlist_editor_display_mode = columns
+
+# visibilities
+header_visibility = no
+statusbar_visibility = no
+titles_visibility = no
+media_library_hide_album_dates = yes
+
+# show the 'Connected to ...' message on startup
+# connected_message_on_startup = yes
+
+# on tab switch between these
+screen_switcher_mode = playlist, media_library
+
+# startup screen
+startup_screen = playlist
+
+# keep cursor centered while moving
+centered_cursor = yes
+
+# seek and volume step range
+seek_time = 5
+volume_change_step = 5
+
+# progressbar look  
+progressbar_look = "───"
+
+# group media library by album artist tag
+# possible values are: 
+#   artist
+#   album_artist
+#   date
+#   genre
+#   composer
+#   performer
+# media_library_primary_tag = album_artist
+
+# on song or player state change execute
+execute_on_song_change = "notify-send -i ~/.config/dunst/icons/music.png "Current song" "`mpc current -f "%artist% - %title%"`"; mpdcover > /dev/null &"
+execute_on_player_state_change = "notify-send -i ~/.config/dunst/icons/music.png "Current song" "`mpc current -f "%artist% - %title%"`""
+
+# disable gui
+mouse_support = no
+
+# empty tag marker
+empty_tag_marker = "[empty]"
+
+# use an external editor
+external_editor = nvim
+use_console_editor = yes
+
+# ignore leading 'The' word while sorting items
+ignore_leading_the = yes
+
+# to make sure that a part of the format is displayed only when certain tags are present, group them with brackets
+# define an alternatives, by separating them with '|'
+# set limit on maximal length of a tag, by putting the appropriate number between % and tag type
+# if you don't want to use a non-color attribute anymore, just put it again,
+# but this time insert character '/' between '$' and attribute character
+
+# song format 
+# possible values are:
+#   %l - length
+#   %f - filename
+#   %D - directory
+#   %a - artist
+#   %A - album artist
+#   %t - title
+#   %b - album
+#   %y - date
+#   %n - track number (01/12 -> 01)
+#   %N - full track info (01/12 -> 01/12)
+#   %g - genre
+#   %c - composer
+#   %p - performer
+#   %d - disc
+#   %C - comment
+#   %P - priority
+#   $R - begin right alignment
+
+# style format
+# possible values are:
+#   0 - default window color (discards all other colors)
+#   1 - black
+#   2 - red
+#   3 - green
+#   4 - yellow
+#   5 - blue
+#   6 - magenta
+#   7 - cyan
+#   8 - white
+#   9 - end of current color
+#   b - bold text
+#   u - underline text
+#   r - reverse colors
+#   a - use alternative character set
+
+# overall header format and colors
+alternative_header_first_line_format = $1$b$aqqu$/a {$5$b%t}|{$8%f} $1$b$atqq$/a 
+alternative_header_second_line_format = {$8$b%a - $8$b%b}|{$8%f}
+
+# format for the currently playing song
+now_playing_prefix = $4$b
+now_playing_suffix = $9$/b
+
+# format for view, cursor and items
+current_item_prefix = $4$r
+current_item_suffix = $9$/r
+current_item_inactive_column_prefix = $5$r
+current_item_inactive_column_suffix = $9$/r
+
+# library song format
+song_library_format = {%n }{%t}|{%f}
+
+# selected items
+selected_item_prefix = $6
+selected_item_suffix = $9
+
+# columns settings
+#   syntax for each column is:
+#   (width of the column)[color of the column]{displayed tag}
+#   r - column will be right aligned
+#   E - if tag is empty, empty tag marker won't be displayed
+song_columns_list_format = (25)[]{aE} (50)[green]{tE} (20)[blue]{bE} (5)[red]{lrE}
+
+# set a background color by setting a color value <foreground>_<background> (256 color is supported)
+# special values for the background color
+# possible values are:
+#   transparent - sets the background to transparent
+#   current - preserve current background color and change only the foreground one
+
+# it is possible to attach format information by appending a colon followed by one or more formats
+# possible values are:
+#   :b - bold
+#   :ur - ?
+
+# enable colors
+colors_enabled = yes
+
+# progressbar colors
+progressbar_color = black
+progressbar_elapsed_color = blue:b
+
+# statusbar info color
+statusbar_color = white
+
+# info colors
+statusbar_time_color = white
+player_state_color = yellow
+volume_color = white
+state_flags_color = yellow
+state_line_color = white
+
+# separator color
+alternative_ui_separator_color = blue
+
+# title color
+header_window_color = white
+
+# search empty tag color
+empty_tag_color = white
+
+# main color
+main_window_color = white
+
+# colors for result info
+color1 = white 
+color2 = white
+
+# borders
+window_border_color = white
+active_window_border = white

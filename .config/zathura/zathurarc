@@ -1,0 +1,39 @@
+# zathura config
+
+# background and foreground
+set default-bg '#1E1E1E' 
+set default-fg '#C7CFDE'
+
+# background and foreground for statusbar
+set statusbar-bg '#2C323C'
+set statusbar-fg '#C7CFDE'
+
+# background and foreground for command line
+set inputbar-bg '#2C323C'
+set inputbar-fg '#C7CFDE'
+
+# background and foreground for completion menu
+set completion-bg '#2C323C'
+set completion-fg '#C7CFDE'
+
+# background and foreground for highlighted item in completion menu
+set completion-highlight-bg '#1DA1F2'
+set completion-highlight-fg '#2C323C'
+
+# background and foreground for	group in completion menu
+set completion-group-bg '#1E1E1E'
+set completion-group-fg '#C7CFDE'
+
+# use the system clipboard
+set selection-clipboard clipboard
+
+# hide the statusbar
+set guioptions ''
+
+# next, previous
+map > navigate next
+map < navigate previous
+
+# half up, half down
+map u scroll half-up
+map d scroll half-down
