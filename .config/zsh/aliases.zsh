@@ -3,7 +3,6 @@
 # misc
 alias chx='chmod +x'
 alias k='killall'
-alias shot='screenshotctl'
 alias xwp='xwallpaper --zoom'
 alias speet='speedtest-cli --simple'
 alias t='touch'

@@ -31,3 +31,4 @@ My archlinux setup.
 * zathura
 * zsh
 * mpv
+* sxhkd

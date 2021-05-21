@@ -1,0 +1,133 @@
+# sxhkd config
+
+# terminal
+super + Return
+  $TERMINAL
+
+# program launcher
+super + d
+  ~/.local/share/bin/dmenu/dmenu_run
+
+# file manager
+# super + e
+#   file manager
+
+# browser
+super + w
+  $BROWSER
+
+# libreoffice
+super + u
+  libreoffice
+
+# keepass
+super + shift + u
+  keepassxc
+
+# signal
+super + t
+  signal-desktop
+
+# telegram
+super + shift + t
+  telegram-desktop
+
+# gimp
+super + v
+  gimp
+
+# darktable
+super + shift + v
+  darktable
+
+# musicplayer
+super + m
+  alacritty -e ncmpcpp
+
+# sound mixer
+super + shift + m 
+  alacritty -e pulsemixer
+
+# power menu
+XF86Tools
+  ~/.local/share/bin/dmenu/dmenu_power
+
+# find menu
+super + i
+  ~/.local/share/bin/dmenu/dmenu_find
+
+# kill menu
+super + shift + i
+  ~/.local/share/bin/dmenu/dmenu_kill
+
+# wifi menu
+super + shift + w
+  ~/.local/share/bin/dmenu/dmenu_mount
+
+# clip menu
+# super + c 
+#   clipmenu
+
+# mount menu
+super + shift + c
+  ~/.local/share/bin/dmenu/dmenu_mount
+
+# duckduckgo menu
+super + y
+  ~/.local/share/bin/dmenu/dmenu_ddg
+
+# man menu
+super + shift + y
+  ~/.local/share/bin/dmenu/dmenu_man
+
+# lock the screen 
+XF86Display
+  slock
+
+# networking
+XF86WLAN
+  NM_STATUS=`nmcli networking`; if [ $NM_STATUS = "enabled" ]; then nmcli networking off; else nmcli networking on; fi
+
+# screenshot
+Print
+  ~/.local/share/bin/shot
+
+# screenshot (select screen snippet)
+super + Print
+  ~/.local/share/bin/shot -s
+
+# mpd toggle pause
+XF86Favorites
+	mpc toggle && notify-send -i `~/.local/share/bin/mpd/cover` 'Current song' '`mpc current -f "%artist% - %title%"`'
+
+# mpd next track
+super + greater
+	mpc next
+
+# mpd previos track
+super + less
+	mpc prev
+
+# increase brightness
+XF86MonBrightnessUp
+  ~/.local/share/bin/bright -i
+
+# decrease brightness
+XF86MonBrightnessDown
+  ~/.local/share/bin/bright -d
+
+# increase volume
+XF86AudioRaiseVolume
+  ~/.local/share/bin/volume -i
+
+# decrease volume
+XF86AudioLowerVolume
+  ~/.local/share/bin/volume -d
+
+# toggle mute
+XF86AudioMute 
+  ~/.local/share/bin/volume -m
+
+# toggle mute microphone
+XF86AudioMicMute 
+  ~/.local/share/bin/micro -m
