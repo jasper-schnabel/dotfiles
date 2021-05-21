@@ -100,7 +100,7 @@ alias gcam='git commit --amend'
 # custom
 alias cdd='cd ~/dotfiles'
 alias cdn='cd ~/.config/nvim'
-alias vt='nvim ~/documents/todo/todo.txt'
+alias vt='nvim +ZenMode ~/documents/todo/todo.txt'
 alias gc1='git commit -m "First commit"'
 alias gcu='git commit -m "Update"'
 alias grad='git remote add dotfiles https://github.com/jasper-schnabel/dotfiles' 

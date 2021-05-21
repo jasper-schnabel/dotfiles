@@ -30,3 +30,4 @@ My archlinux setup.
 * pulsemixer
 * zathura
 * zsh
+* mpv
