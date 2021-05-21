@@ -29,3 +29,4 @@ My archlinux setup.
 * ncmpcpp
 * pulsemixer
 * zathura
+* zsh
