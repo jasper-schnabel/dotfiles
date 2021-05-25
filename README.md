@@ -32,3 +32,4 @@ My archlinux setup.
 * zsh
 * mpv
 * sxhkd
+* nvim
