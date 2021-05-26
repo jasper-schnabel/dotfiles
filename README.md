@@ -22,9 +22,7 @@ My archlinux setup.
 * calendar + todo
 * RSS feed reader
 * scripts
-* fonts
 * docs
-* root
 * installation method
 * programs
 * wallpaper
@@ -35,17 +33,18 @@ My archlinux setup.
 
 **Done/Features**
 
-* xinit
-* archlinux installation guide
-* alacritty
-* beets
-* conky
-* imv
-* mpd
-* ncmpcpp
-* pulsemixer
-* zathura
-* zsh
-* mpv
-* sxhkd
-* nvim
+* ~~xinit~~
+* ~~archlinux installation guide~~
+* ~~alacritty~~
+* ~~beets~~
+* ~~conky~~
+* ~~imv~~
+* ~~mpd~~
+* ~~ncmpcpp~~
+* ~~pulsemixer~~
+* ~~zathura~~
+* ~~zsh~~
+* ~~mpv~~
+* ~~sxhkd~~
+* ~~nvim~~
+* ~~root~~

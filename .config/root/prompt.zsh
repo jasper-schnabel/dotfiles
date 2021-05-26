@@ -16,7 +16,7 @@ get-user-host() {
 
 # pwd
 get-pwd() {
-  echo -n "%B%{%F{blue}%} %~ %b"
+  echo -n "%B%{%F{red}%} %~ %b"
 }
 
 # git
