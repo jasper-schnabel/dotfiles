@@ -170,6 +170,7 @@ reboot
 
 ```
 loadkeys de-latin1
+usermod -s /bin/zsh root
 useradd -m -s /bin/zsh -G wheel my_username
 passwd my_username
 ```

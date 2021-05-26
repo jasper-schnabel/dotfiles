@@ -15,7 +15,23 @@ My archlinux setup.
 
 ## TODO
 
-* a lot
+* terminal multiplexer
+* terminal sessions
+* file manager
+* process viewer
+* calendar + todo
+* RSS feed reader
+* scripts
+* fonts
+* docs
+* root
+* installation method
+* programs
+* wallpaper
+* dmenu
+* dunst
+* lockscreen
+* window manager + statusbar
 
 **Done/Features**
 
