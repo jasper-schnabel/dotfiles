@@ -25,7 +25,7 @@ xset -b b off &
 xset s 300 && xss-lock slock &
 
 # set wallpaper
-xwallpaper --zoom ~/pictures/wallpaper.png &
+xwallpaper --zoom ~/.local/share/wallpaper.png &
 
 # start mpd-conky
 conky &
