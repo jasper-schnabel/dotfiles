@@ -14,6 +14,7 @@ alias mem="free -h"
 alias df="/bin/df -h"
 alias bat="/bin/bat --color always -p -P"
 alias alert="notify-send"
+alias clp="colorpicker --short --preview --one-shot"
 
 # operations
 alias -g WC="| wc -l"
