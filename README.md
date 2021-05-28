@@ -27,7 +27,6 @@ My archlinux setup.
 * programs
 * wallpaper
 * dmenu
-* lockscreen
 * window manager + statusbar
 
 **Done/Features**
@@ -48,3 +47,4 @@ My archlinux setup.
 * ~~nvim~~
 * ~~root~~
 * ~~dunst~~
+* ~~slock~~
