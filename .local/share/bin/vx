@@ -1,0 +1,53 @@
+#! /bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
+  cat <<EOF
+$ $0 FILENAME
+Create a new executable file,
+add a --help menu and open it in nvim.
+
+Parameters:
+  \$1: name of the script to be created
+
+Example:
+  $ $0 connect.sh
+EOF
+  exit 1
+fi
+
+command -v nvim >/dev/null || { echo "error: nvim is not installed, exiting..."; exit 1; }
+
+FILE="$1"
+
+file_content() {
+  cat <<EOF
+#!/bin/sh
+
+if [ "\$1" = "-h" ] || [ "\$1" = "--help" ] || [ -n "\$1" ]; then
+if [ "\$1" = "-h" ] || [ "\$1" = "--help" ] || [ -z "\$1" ]; then
+  cat <<EOF
+$ \$0 <++>
+<++>
+
+Parameters:
+  \\\$1: <++>
+  [\\\$1]: <++>
+
+Flags:
+  <++>: <++>
+
+Example:
+  $ \$0 <++>
+`echo "EOF"`
+  exit 1
+fi
+
+command -v <++> >/dev/null || { echo "error: <++> is not installed, exiting..."; exit 1; }
+
+<++>
+EOF
+}
+
+file_content > "$FILE"
+chmod +x "$FILE"
+nvim "$FILE"

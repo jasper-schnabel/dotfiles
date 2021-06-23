@@ -6,7 +6,7 @@ super + Return
 
 # program launcher
 super + d
-  ~/.local/share/bin/dmenu/dmenu_run
+  dmenu_run -p "run:"
 
 # file manager
 # super + e
@@ -65,8 +65,8 @@ super + shift + w
   ~/.local/share/bin/dmenu/dmenu_mount
 
 # clip menu
-# super + c 
-#   clipmenu
+super + c 
+  clipmenu -c -l 14 -bw 3 -ww 600 -p "copy:"
 
 # mount menu
 super + shift + c

@@ -18,16 +18,13 @@ My archlinux setup.
 * terminal multiplexer
 * terminal sessions
 * file manager
-* process viewer
-* calendar + todo
+* calendar
 * RSS feed reader
 * scripts
-* docs
 * installation method
-* programs
-* wallpaper
-* dmenu
-* window manager + statusbar
+* window manager
+* statusbar
+* overlay bar
 
 **Done/Features**
 
@@ -48,3 +45,4 @@ My archlinux setup.
 * ~~root~~
 * ~~dunst~~
 * ~~slock~~
+* ~~dmenu~~
