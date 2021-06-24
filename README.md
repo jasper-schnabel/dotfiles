@@ -24,7 +24,6 @@ My archlinux setup.
 * installation method
 * window manager
 * statusbar
-* overlay bar
 
 **Done/Features**
 
@@ -46,3 +45,4 @@ My archlinux setup.
 * ~~dunst~~
 * ~~slock~~
 * ~~dmenu~~
+* ~~xob~~

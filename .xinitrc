@@ -27,6 +27,10 @@ xset s 300 && xss-lock slock &
 # set wallpaper
 xwallpaper --zoom ~/.local/share/wallpaper.png &
 
+# start xob
+mkfifo /tmp/xob.fifo &
+tail -f /tmp/xob.fifo | xob &
+
 # start mpd-conky
 conky &
 
