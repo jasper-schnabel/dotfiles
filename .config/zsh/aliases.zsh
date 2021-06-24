@@ -15,6 +15,7 @@ alias df="/bin/df -h"
 alias bat="/bin/bat --color always -p -P"
 alias alert="notify-send"
 alias clp="colorpicker --short --preview --one-shot"
+alias upm="sudo reflector --country Germany --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # operations
 alias -g WC="| wc -l"
@@ -80,8 +81,8 @@ alias smount="simple-mtpfs --device 1"
 alias usmount="fusermount -u"
 
 # youtube-dl
-alias ytmp3="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/downloads/%(title)s.%(ext)s'"
-alias ytdl="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/downloads/%(title)s.%(ext)s'"
+alias ytmp3="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(title)s.%(ext)s'"
+alias ytdl="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(title)s.%(ext)s'"
 
 # git
 alias gi="git init"
@@ -100,7 +101,7 @@ alias gcam="git commit --amend"
 alias cdd="cd ~/dotfiles"
 alias cdn="cd ~/.config/nvim"
 alias cds="cd ~/suckless"
-alias vt="nvim +ZenMode ~/documents/todo/todo.txt"
+alias vt="nvim +ZenMode ~/Documents/todo/todo.txt"
 alias gc1="git commit -m 'First commit'"
 alias gcu="git commit -m 'Update'"
 alias grad="git remote add dotfiles https://github.com/jasper-schnabel/dotfiles" 

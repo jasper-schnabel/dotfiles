@@ -7,7 +7,7 @@ lyrics_directory = "~/.local/share/ncmpcpp/lyrics"
 # connection settings
 mpd_host = localhost
 mpd_port = 6600
-mpd_music_dir = "~/music"
+mpd_music_dir = "~/Music"
 mpd_connection_timeout = 5
 
 # visualizer path
@@ -97,8 +97,8 @@ progressbar_look = "───"
 # media_library_primary_tag = album_artist
 
 # on song or player state change execute
-execute_on_song_change = "notify-send -i ~/.config/dunst/icons/music.png "Current song" "`mpc current -f "%artist% - %title%"`"; mpdcover > /dev/null &"
-execute_on_player_state_change = "notify-send -i ~/.config/dunst/icons/music.png "Current song" "`mpc current -f "%artist% - %title%"`""
+execute_on_song_change = "notify-send "Current song" "`mpc current -f "%artist% - %title%"`"; mpdcover > /dev/null &"
+execute_on_player_state_change = "notify-send "Current song" "`mpc current -f "%artist% - %title%"`""
 
 # disable gui
 mouse_support = no

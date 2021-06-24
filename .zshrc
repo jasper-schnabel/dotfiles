@@ -57,11 +57,11 @@ export LESS_TERMCAP_ue=`tput sgr0; tput setaf 7`
 export XDG_CONFIG_HOME="$HOME/.config/"
 export XDG_CACHE_HOME="$HOME/.cache/"
 export XDG_DATA_HOME="$HOME/.local/share/"
-export XDG_DOCUMENTS_DIR="$HOME/documents/"
-export XDG_DOWNLOAD_DIR="$HOME/downloads/"
-export XDG_MUSIC_DIR="$HOME/music/"
-export XDG_PICTURES_DIR="$HOME/pictures/"
-export XDG_VIDEOS_DIR="$HOME/videos/"
+export XDG_DOCUMENTS_DIR="$HOME/Documents/"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads/"
+export XDG_MUSIC_DIR="$HOME/Music/"
+export XDG_PICTURES_DIR="$HOME/Pictures/"
+export XDG_VIDEOS_DIR="$HOME/Videos/"
 
 # autostart xorg
 if [ `tty` = /dev/tty1 ]; then
