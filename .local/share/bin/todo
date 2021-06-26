@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+$ $0
+Open my todo file in neovim.
+EOF
+  exit 1
+fi
+
+command -v nvim >/dev/null || { echo "error: nvim is not installed, exiting..."; exit 1; }
+
+nvim +ZenMode "$HOME/Documents/todo/todo.txt"
