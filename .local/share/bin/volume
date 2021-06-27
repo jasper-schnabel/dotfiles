@@ -1,0 +1,39 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  cat <<EOF
+\$ $0 [FLAGS]
+Set the volume and send a notification.
+
+Flags:
+  -h: this menu, --help shows this too
+  -i: increase volume by 5 percent
+  -d: decrease volume by 5 percent
+  -m: toggle mute
+EOF
+  exit 1
+fi
+
+command -v pulseaudio >/dev/null || { echo "error: pulseaudio is not installed, exiting..."; exit 1; }
+command -v xob >/dev/null || { echo "error: xob is not installed, exiting..."; exit 1; }
+
+if pactl list sinks short | grep 'RUNNING' -m1; then
+  SINK=`pactl list sinks short | awk '/RUNNING/{print $1}'`
+else
+  SINK="@DEFAULT_SINK@"
+fi
+
+MUTE=`pactl list sinks | awk '/Mute/{print $2}'`
+if [ $MUTE = "yes" ]; then
+  MUTE_STATUS="!"
+else
+  MUTE_STATUS=""
+fi
+
+VOLUME=`pactl list sinks | grep "Sink #0" -A 10 | awk '/Volume/{print $5}' | sed 's/%//g'`
+
+case "$1" in
+  -i) pactl set-sink-volume $SINK +5% && echo "$VOLUME$MUTE_STATUS" > /tmp/xob.fifo;;
+  -d) pactl set-sink-volume $SINK -5% && echo "$VOLUME$MUTE_STATUS" > /tmp/xob.fifo;;
+  -m) pactl set-sink-mute $SINK toggle && [ $MUTE = "yes" ] && echo "$VOLUME" > /tmp/xob.fifo || echo "$VOLUME!" > /tmp/xob.fifo;;
+esac

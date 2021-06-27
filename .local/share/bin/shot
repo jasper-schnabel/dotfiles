@@ -2,13 +2,14 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   cat <<EOF
-$ $0 DELAY
+\$ $0 [FLAGS] [DELAY]
 Take a screenshot.
 
 Parameters:
   \$1: custom delay (in seconds)
 
 Flags:
+  -h: this menu, --help shows this too
   -s: select a screen snippet
 
 Example:

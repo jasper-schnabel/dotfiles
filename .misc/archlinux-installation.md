@@ -227,9 +227,15 @@ hostnamectl set-hostname my_hostname
 hostnamectl
 ```
 
-#### Last steps
+#### Xorg Keyboard and sh shell
 
 ```
 localectl set-x11-keymap de pc104 nodeadkeys
+sudo ln -sfT dash /bin/sh
+```
+
+#### Last step
+
+```
 reboot
 ```

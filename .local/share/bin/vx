@@ -2,12 +2,15 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
   cat <<EOF
-$ $0 FILENAME
+\$ $0 [FLAGS] [FILENAME]
 Create a new executable file,
 add a --help menu and open it in nvim.
 
 Parameters:
   \$1: name of the script to be created
+
+Flags:
+  -h: this menu, --help shows this too
 
 Example:
   $ $0 connect.sh
@@ -27,14 +30,18 @@ if [ "\$1" = "-h" ] || [ "\$1" = "--help" ] || [ -n "\$1" ]; then
 if [ "\$1" = "-h" ] || [ "\$1" = "--help" ] || [ -z "\$1" ]; then
 if [ "\$1" = "-h" ] || [ "\$1" = "--help" ]; then
   cat <<EOF
-$ \$0 <++>
+\\\$ \$0 [FLAGS] <++>
 <++>
 
 Parameters:
   \\\$1: <++>
   [\\\$1]: <++>
 
+Commands:
+  <++>: <++>
+
 Flags:
+  -h: this menu, --help shows this too
   <++>: <++>
 
 Example:

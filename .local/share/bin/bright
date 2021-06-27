@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  cat <<EOF
+\$ $0 [FLAGS]
+Set the backlight and send a notification.
+
+Flags:
+  -h: this menu, --help shows this too
+  -i: increase brightness by 10 percent
+  -d: decrease brightness by 10 percent
+EOF
+  exit 1
+fi
+
+command -v light >/dev/null || { echo "error: light is not installed, exiting..."; exit 1; }
+command -v xob >/dev/null || { echo "error: xob is not installed, exiting..."; exit 1; }
+
+BRIGHTNESS=`light -G | sed 's/...$//'`
+
+case "$1" in
+  -i) sudo light -A 10 && echo "$BRIGHTNESS" > /tmp/xob.fifo;;
+  -d) sudo light -U 10 && echo "$BRIGHTNESS" > /tmp/xob.fifo;;
+esac
