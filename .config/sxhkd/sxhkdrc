@@ -130,4 +130,4 @@ XF86AudioMute
 
 # toggle mute microphone
 XF86AudioMicMute 
-  ~/.local/share/bin/micro -m
+  ~/.local/share/bin/micro

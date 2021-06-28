@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ $0 [FLAGS]
+Toggle microphone mute and send a notification.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v pulseaudio >/dev/null || { echo "error: pulseaudio is not installed, exiting..."; exit 1; }
+
+if pactl list sources short | grep 'RUNNING' -m1; then
+  SOURCE=`pactl list sources short | awk '/RUNNING/{print $1}'`
+else
+  SOURCE="1"
+fi
+
+MUTE=`pactl list sources | grep "Source #$SOURCE" -A 10 | awk '/Mute/{print $2}'`
+
+pactl set-source-mute "$SOURCE" toggle && [ "$MUTE" = "yes" ] && notify-send "Microphone unmuted." || notify-send "Microphone muted."

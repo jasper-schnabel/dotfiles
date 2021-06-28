@@ -20,20 +20,20 @@ command -v xob >/dev/null || { echo "error: xob is not installed, exiting..."; e
 if pactl list sinks short | grep 'RUNNING' -m1; then
   SINK=`pactl list sinks short | awk '/RUNNING/{print $1}'`
 else
-  SINK="@DEFAULT_SINK@"
+  SINK="0"
 fi
 
-MUTE=`pactl list sinks | awk '/Mute/{print $2}'`
-if [ $MUTE = "yes" ]; then
+MUTE=`pactl list sinks | grep "Sink #$SINK" -A 10 | awk '/Mute/{print $2}'`
+if [ "$MUTE" = "yes" ]; then
   MUTE_STATUS="!"
 else
   MUTE_STATUS=""
 fi
 
-VOLUME=`pactl list sinks | grep "Sink #0" -A 10 | awk '/Volume/{print $5}' | sed 's/%//g'`
+VOLUME=`pactl list sinks | grep "Sink #$SINK" -A 10 | awk '/Volume/{print $5}' | sed 's/%//g'`
 
 case "$1" in
-  -i) pactl set-sink-volume $SINK +5% && echo "$VOLUME$MUTE_STATUS" > /tmp/xob.fifo;;
-  -d) pactl set-sink-volume $SINK -5% && echo "$VOLUME$MUTE_STATUS" > /tmp/xob.fifo;;
-  -m) pactl set-sink-mute $SINK toggle && [ $MUTE = "yes" ] && echo "$VOLUME" > /tmp/xob.fifo || echo "$VOLUME!" > /tmp/xob.fifo;;
+  -i) pactl set-sink-volume "$SINK" +5% && echo "$VOLUME$MUTE_STATUS" > /tmp/xob.fifo;;
+  -d) pactl set-sink-volume "$SINK" -5% && echo "$VOLUME$MUTE_STATUS" > /tmp/xob.fifo;;
+  -m) pactl set-sink-mute "$SINK" toggle && [ "$MUTE" = "yes" ] && echo "$VOLUME" > /tmp/xob.fifo || echo "$VOLUME!" > /tmp/xob.fifo;;
 esac
