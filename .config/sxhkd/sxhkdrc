@@ -98,7 +98,7 @@ super + Print
 
 # mpd toggle pause
 XF86Favorites
-	mpc toggle && notify-send -i `~/.local/share/bin/mpd/cover` "Current song" "`mpc current -f "%artist% - %title%"`"
+	mpc toggle && notify-send "Now Playing" "`mpc current -f '%artist% - %title%'`"
 
 # mpd next track
 super + greater

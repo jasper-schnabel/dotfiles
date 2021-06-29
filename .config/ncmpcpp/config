@@ -97,8 +97,8 @@ progressbar_look = "───"
 # media_library_primary_tag = album_artist
 
 # on song or player state change execute
-execute_on_song_change = "notify-send "Current song" "`mpc current -f "%artist% - %title%"`"; mpdcover > /dev/null &"
-execute_on_player_state_change = "notify-send "Current song" "`mpc current -f "%artist% - %title%"`""
+execute_on_song_change = notify-send "Now Playing" "`mpc current -f '%artist% - %title%'`"
+execute_on_player_state_change = notify-send "Now Playing" "`mpc current -f '%artist% - %title%'`"
 
 # disable gui
 mouse_support = no
