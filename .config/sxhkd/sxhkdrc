@@ -62,7 +62,7 @@ super + shift + i
 
 # wifi menu
 super + shift + w
-  ~/.local/share/bin/dmenu/dmenu_mount
+  ~/.local/share/bin/dmenu/dmenu_wifi
 
 # clip menu
 super + c 

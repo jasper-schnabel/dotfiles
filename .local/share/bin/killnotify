@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
+  cat <<EOF
+\$ killnotify [FLAGS] [PROCESS]
+Kill a process and send a notification.
+
+Parameters:
+  \$1: the process to kill
+
+Flags:
+  -h: this menu, --help shows this too
+
+Example:
+  $ killnotify mpd
+EOF
+  exit 1
+fi
+
+killall "$1" && notify-send "$1 killed."
