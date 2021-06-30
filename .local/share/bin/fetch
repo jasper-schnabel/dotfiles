@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ fetch [FLAGS]
+Simple fetch command.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v wmctrl >/dev/null || { echo "error: wmctrl is not installed, exiting..."; exit 1; }
+
+BLUE=`tput sgr0; tput bold; tput setaf 4`
+WHITE=`tput sgr0; tput setaf 7`
+
+OS="archlinux"
+KERNEL=`uname -r`
+UPTIME=`uptime -p | sed 's/up //'`
+PACKAGES=`pacman -Q | wc -l`
+SHELL=`basename $SHELL`
+WM=`wmctrl -m | awk '/Name/{print $2}'`
+
+
+cat <<EOF
+
+$BLUE  os:        $WHITE$OS
+$BLUE  kernel:    $WHITE$KERNEL
+$BLUE  uptime:    $WHITE$UPTIME
+$BLUE  packages:  $WHITE$PACKAGES
+$BLUE  shell:     $WHITE$SHELL
+$BLUE  editor:    $WHITE$EDITOR
+$BLUE  terminal:  $WHITE$TERMINAL
+$BLUE  wm:        $WHITE$WM
+
+EOF

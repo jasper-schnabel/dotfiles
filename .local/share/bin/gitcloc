@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
+  cat <<EOF
+\$ gitcloc [FLAGS] [GIT-REPO-LINK]
+Count lines of code of a git repository.
+
+Parameters:
+  \$1: link to a git repository
+
+Flags:
+  -h: this menu, --help shows this too
+
+Example:
+  $ gitcloc https://github.com/jasper-schnabel/dotfiles
+EOF
+  exit 1
+fi
+
+command -v git >/dev/null || { echo "error: git is not installed, exiting..."; exit 1; }
+command -v cloc >/dev/null || { echo "error: cloc is not installed, exiting..."; exit 1; }
+
+git clone -q "$1" /tmp/cloc-git-repo
+cloc /tmp/cloc-git-repo
+rm -rf /tmp/cloc-git-repo

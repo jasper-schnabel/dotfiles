@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ cleanup [FLAGS]
+Removes various irrelevant files/dirs
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+rm -rf ~/Applications/
+rm -rf ~/Desktop/
+
+rm -f ~/.lesshst
+rm -f ~/.lesshsQ
+rm -f ~/.zcompdump
+rm -f ~/.node_repl_history
+
+notify-send "Cleaned up filesystem."
