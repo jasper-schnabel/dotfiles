@@ -2,7 +2,7 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   cat <<EOF
-\$ $0 [FLAGS] [DELAY]
+\$ shot [FLAGS] [DELAY]
 Take a screenshot.
 
 Parameters:
@@ -13,7 +13,7 @@ Flags:
   -s: select a screen snippet
 
 Example:
-  $ $0 -s 5
+  $ shot -s 5
 EOF
   exit 1
 fi
@@ -26,8 +26,8 @@ mkdir -p "$HOME/Pictures"
 
 if [ "$1" = "-s" ]; then
   [ -n "$2" ] && { notify-send -t $2"000" "Screenshot in $2 seconds"; sleep $2; }
-  scrot "$FORMAT" -z -q 100 -s && notify-send "Took screenshot"
+  scrot "$FORMAT" -z -q 100 -s && notify-send -i "$FORMAT" "Took screenshot"
 else 
   [ -n "$1" ] && { notify-send -t $1"000" "Screenshot in $1 seconds"; sleep $1; }
-  scrot "$FORMAT" -z -q 100 && notify-send "Took screenshot"
+  scrot "$FORMAT" -z -q 100 && notify-send -i "$FORMAT" "Took screenshot"
 fi

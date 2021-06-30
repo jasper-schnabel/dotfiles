@@ -1,0 +1,47 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  cat <<EOF
+\$ setbg [FLAGS] [FILE] [DIRECTORY]
+Set the wallpaper; if given a directory,
+choose a random file from it.
+
+Parameters:
+  \$1: file or directory with pictures
+
+Flags:
+  -h: this menu, --help shows this too
+  -i: set current file in imv as wallpaper
+
+Example:
+  $ setbg /path/to/picture
+EOF
+  exit 1
+fi
+
+command -v xwallpaper >/dev/null || { echo "error: xwallpaper is not installed, exiting..."; exit 1; }
+command -v imv >/dev/null || { echo "error: imv is not installed, exiting..."; exit 1; }
+
+INPUT="$1"
+WALLPAPER="$HOME/.local/share/wallpaper.png"
+if [ -d "$1" ]; then
+  ACCIDENTALLY=`ls -1 "$INPUT" | shuf -n1` # couldn't use RANDOM as a variable because it's a predefinded shell variable
+fi
+
+mkdir -p "$HOME/.local/share"
+
+if [ "$1" = "-i" ]; then
+  cp "$imv_current_file" "$WALLPAPER"
+  xwallpaper --zoom "$WALLPAPER"
+  notify-send -i "$WALLPAPER" "New wallpaper chosen."
+fi
+
+if [ -d "$INPUT" ]; then
+  cp "$INPUT"/"$ACCIDENTALLY" "$WALLPAPER"
+  xwallpaper --zoom "$WALLPAPER"
+  notify-send -i "$WALLPAPER" "New random wallpaper chosen."
+elif [ -f "$INPUT" ]; then
+  cp "$INPUT" "$WALLPAPER"
+  xwallpaper --zoom "$WALLPAPER"
+  notify-send -i "$WALLPAPER" "New wallpaper chosen."
+fi

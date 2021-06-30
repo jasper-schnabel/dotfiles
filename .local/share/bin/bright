@@ -2,7 +2,7 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   cat <<EOF
-\$ $0 [FLAGS]
+\$ bright [FLAGS]
 Set the backlight and send a notification.
 
 Flags:

@@ -2,7 +2,7 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   cat <<EOF
-\$ $0 [FLAGS]
+\$ volume [FLAGS]
 Set the volume and send a notification.
 
 Flags:

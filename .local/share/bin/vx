@@ -2,7 +2,7 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
   cat <<EOF
-\$ $0 [FLAGS] [FILENAME]
+\$ vx [FLAGS] [FILENAME]
 Create a new executable file,
 add a --help menu and open it in nvim.
 
@@ -13,7 +13,7 @@ Flags:
   -h: this menu, --help shows this too
 
 Example:
-  $ $0 connect.sh
+  $ vx connect.sh
 EOF
   exit 1
 fi
@@ -30,7 +30,7 @@ if [ "\$1" = "-h" ] || [ "\$1" = "--help" ] || [ -n "\$1" ]; then
 if [ "\$1" = "-h" ] || [ "\$1" = "--help" ] || [ -z "\$1" ]; then
 if [ "\$1" = "-h" ] || [ "\$1" = "--help" ]; then
   cat <<EOF
-\\\$ \$0 [FLAGS] <++>
+\\$ $FILE [FLAGS] <++>
 <++>
 
 Parameters:
@@ -45,7 +45,7 @@ Flags:
   <++>: <++>
 
 Example:
-  $ \$0 <++>
+  $ $FILE <++>
 `echo "EOF"`
   exit 1
 fi

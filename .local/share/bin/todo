@@ -2,7 +2,7 @@
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
   cat <<EOF
-\$ $0 [FLAGS]
+\$ todo [FLAGS]
 Open my todo file in neovim.
 
 Flags:
