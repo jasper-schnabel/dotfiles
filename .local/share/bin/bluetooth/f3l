@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ f3l [FLAGS]
+Connect to my personal JBL Flip3 left bluetooth speaker.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v bluetoothctl >/dev/null || { echo "error: bluetoothctl is not installed, exiting..."; exit 1; }
+command -v pulseaudio >/dev/null || { echo "error: pulseaudio is not installed, exiting..."; exit 1; }
+
+bluetoothctl power on > /dev/null 
+bluetoothctl connect FC:A8:9A:BE:E6:E0 > /dev/null
+notify-send "Connected with JBL Flip3 left."

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ sony [FLAGS]
+Connect to my personal Sony bluetooth speakers.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v bluetoothctl >/dev/null || { echo "error: bluetoothctl is not installed, exiting..."; exit 1; }
+command -v pulseaudio >/dev/null || { echo "error: pulseaudio is not installed, exiting..."; exit 1; }
+
+bluetoothctl power on > /dev/null 
+bluetoothctl connect 6C:5A:B5:54:D7:01 > /dev/null
+notify-send "Connected with Sony speakers."
