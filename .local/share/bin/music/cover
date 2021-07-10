@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ cover [FLAGS]
+Get the path to the cover of 
+the current song playing in mpd.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v mpc >/dev/null || { echo "error: mpc is not installed, exiting..."; exit 1; }
+command -v ffmpeg >/dev/null || { echo "error: ffmpeg is not installed, exiting..."; exit 1; }
+
+SONG_FILE=`mpc current -f "$HOME/music/%file%"`
+COVER_PATH="/tmp/cover.png"
+
+ffmpeg -loglevel error -y -i "$SONG_FILE" "$COVER_PATH" 2> /dev/null
+
+if [ $? != 0 ]; then
+	convert -size 400x400 xc:none -gravity center -pointsize 40 -fill white -draw "text 0,0 'No cover found.'" "$COVER_PATH"
+  echo "$COVER_PATH"
+else 
+  echo "$COVER_PATH"
+fi
