@@ -15,7 +15,7 @@ fi
 command -v mpc >/dev/null || { echo "error: mpc is not installed, exiting..."; exit 1; }
 command -v ffmpeg >/dev/null || { echo "error: ffmpeg is not installed, exiting..."; exit 1; }
 
-SONG_FILE=`mpc current -f "$HOME/music/%file%"`
+SONG_FILE=`mpc current -f "$HOME/ct/music/%file%"`
 LYRICS_PATH="/tmp/lyrics.txt"
 
 ffprobe -loglevel error -show_entries format_tags=lyrics-XXX -of default=noprint_wrappers=1:nokey=1 "$SONG_FILE" > "$LYRICS_PATH"

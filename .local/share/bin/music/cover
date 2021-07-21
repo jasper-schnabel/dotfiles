@@ -15,7 +15,7 @@ fi
 command -v mpc >/dev/null || { echo "error: mpc is not installed, exiting..."; exit 1; }
 command -v ffmpeg >/dev/null || { echo "error: ffmpeg is not installed, exiting..."; exit 1; }
 
-SONG_FILE=`mpc current -f "$HOME/music/%file%"`
+SONG_FILE=`mpc current -f "$HOME/ct/music/%file%"`
 COVER_PATH="/tmp/cover.png"
 
 ffmpeg -loglevel error -y -i "$SONG_FILE" "$COVER_PATH" 2> /dev/null

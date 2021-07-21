@@ -16,6 +16,9 @@ alias bat="/bin/bat --color always -p -P"
 alias alert="notify-send"
 alias clp="colorpicker --short --preview --one-shot"
 alias upm="sudo reflector --country Germany --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+calc () {
+  node -e 'console.log($@)'
+}
 
 # operations
 alias -g WC="| wc -l"
@@ -85,25 +88,14 @@ alias ytmp3="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3'
 alias ytdl="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(title)s.%(ext)s'"
 
 # git
-alias gi="git init"
 alias gn="git config --global user.name"
 alias ge="git config --global user.email"
-alias gra="git remote add"
-alias gcl="git clone"
-alias gs="git status"
-alias gd="git diff"
-alias ga="git add"
-alias gaa="git add ."
-alias gc="git commit -m"
-alias gcam="git commit --amend"
 
 # custom
-alias cdd="cd ~/Repos/dotfiles"
+alias cdd="cd ~/code/dotfiles"
 alias cdn="cd ~/.config/nvim"
-alias cds="cd ~/Repos/suckless"
-alias vt="nvim +ZenMode ~/Documents/todo/todo.txt"
-alias gc1="git commit -m 'First commit'"
-alias gcu="git commit -m 'Update'"
+alias cds="cd ~/code/suckless"
+alias todo="nvim +ZenMode ~/ct/Documents/todo/todo.txt"
 alias grad="git remote add dotfiles https://github.com/jasper-schnabel/dotfiles" 
 alias gran="git remote add neovim https://github.com/jasper-schnabel/neovim" 
 alias gras="git remote add suckless https://github.com/jasper-schnabel/suckless" 

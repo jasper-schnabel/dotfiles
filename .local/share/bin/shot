@@ -20,9 +20,9 @@ fi
 
 command -v scrot >/dev/null || { echo "error: scrot is not installed, exiting..."; exit 1; }
 
-FORMAT="$HOME/Pictures/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png"
+FORMAT="$HOME/ct/pictures/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png"
 
-mkdir -p "$HOME/Pictures"
+mkdir -p "$HOME/ct/pictures"
 
 if [ "$1" = "-s" ]; then
   [ -n "$2" ] && { notify-send -t $2"000" "Screenshot in $2 seconds"; sleep $2; }

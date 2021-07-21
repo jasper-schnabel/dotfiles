@@ -1,7 +1,7 @@
 # beets config
 
 # music directory
-directory: ~/Music/imported-music
+directory: ~/ct/music/imported-music
 
 # music library
 library: ~/.local/share/musiclibrary.db
