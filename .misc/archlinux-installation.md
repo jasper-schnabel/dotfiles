@@ -136,23 +136,35 @@ localectl set-locale LANG=en_US.UTF-8
 
 #### Keyboard
 
+
+Use `nvim /etc/vconsole.conf` to add:
+
 ```
-localectl set-keymap KEYMAP=de-latin1
+KEYMAP=de-latin1
 ```
 
 #### Boot loader
 
 ```
 os-prober
-mkdir /mnt2
-grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB
+mkdir /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 
 fdisk /dev/main_partition
 	p	to see which partition is the windows_boot_partition
 	q	to quit
 
-mount /dev/window_boot_partition /mnt2
+mount /dev/window_boot_partition /boot/efi
 lsblk
+```
+
+Use `nvim /etc/default/grub` to add:
+
+```
+GRUB_DISABLE_OS_PROBER=false
+```
+
+```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
