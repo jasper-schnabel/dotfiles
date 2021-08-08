@@ -1,48 +1,35 @@
 # dotfiles
 
-My archlinux setup.
+A simple and powerful archlinux setup, kinda always WIP!
 
-> Still work in progress!
+## Features
 
-## Goals
+- zsh
+- [neovim](https://github.com/jasper-schnabel/neovim)
+- alacritty
+- mpd, ncmpcpp and beets
+- zathura, imv and mpv
+- conky and dunst
+- [dmenu and slock](https://github.com/jasper-schnabel/suckless)
+- sxhkd
 
-1. This project should be simple, while still being powerful.
+### Requirements
 
-## Requirements
+- archlinux
+- neovim version >= 0.5
 
-* archlinux
-* neovim nightly (>= version 0.5)
+### Installation
 
-## TODO
+`Coming soon...`
 
-* terminal multiplexer
-* terminal sessions
-* file manager
-* calendar
-* RSS feed reader
-* scripts
-* installation method
-* window manager
-* statusbar
+### Todo
 
-**Done/Features**
-
-* ~~xinit~~
-* ~~archlinux installation guide~~
-* ~~alacritty~~
-* ~~beets~~
-* ~~conky~~
-* ~~imv~~
-* ~~mpd~~
-* ~~ncmpcpp~~
-* ~~pulsemixer~~
-* ~~zathura~~
-* ~~zsh~~
-* ~~mpv~~
-* ~~sxhkd~~
-* ~~nvim~~
-* ~~root~~
-* ~~dunst~~
-* ~~slock~~
-* ~~dmenu~~
-* ~~xob~~
+- tmux or an alternative
+- file manager
+- RSS feed reader
+- scripts:
+  - archiver
+  - dmenu_mount and dmenu_ddg
+- installation method
+- window manager
+- statusbar

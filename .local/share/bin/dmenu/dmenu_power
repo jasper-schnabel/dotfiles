@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ dmenu_power [FLAGS]
+Issue a power command.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v dmenu >/dev/null || { echo "error: dmenu is not installed, exiting..."; exit 1; }
+command -v slock >/dev/null || { echo "error: slock is not installed, exiting..."; exit 1; }
+
+case `printf "reboot\nshutdown\nsuspend\nlock\nexit" | dmenu -c -l 5 -bw 3 -ww 300 -p "power:"` in
+  "reboot")
+    reboot;;
+  "shutdown")
+    poweroff;;
+  "suspend")
+    systemctl suspend && slock;;
+  "lock")
+    slock;;
+  "exit")
+    killall xinit;;
+esac

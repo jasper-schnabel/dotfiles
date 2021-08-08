@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ dmenu_kill [FLAGS]
+Issue a kill command.
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v dmenu >/dev/null || { echo "error: dmenu is not installed, exiting..."; exit 1; }
+
+killall `ps axch -o cmd | dmenu -p "kill:"`

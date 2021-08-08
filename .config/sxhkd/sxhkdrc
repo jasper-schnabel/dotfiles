@@ -60,10 +60,6 @@ super + i
 super + shift + i
   ~/.local/share/bin/dmenu/dmenu_kill
 
-# wifi menu
-super + shift + w
-  ~/.local/share/bin/dmenu/dmenu_wifi
-
 # clip menu
 super + c 
   clipmenu -c -l 14 -bw 3 -ww 600 -p "copy:"
@@ -75,10 +71,6 @@ super + shift + c
 # duckduckgo menu
 super + y
   ~/.local/share/bin/dmenu/dmenu_ddg
-
-# man menu
-super + shift + y
-  ~/.local/share/bin/dmenu/dmenu_man
 
 # lock the screen 
 XF86Display
