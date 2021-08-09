@@ -64,6 +64,8 @@ alias 5.="cd ../../../../.."
 
 # utilities
 alias rm="sudo /bin/rm -v"
+alias cp="/bin/cp -v"
+alias mv="/bin/mv -v"
 alias rmr="rm -rfv"
 alias cpr="cp -rfv"
 alias cpf="cp -fv"
