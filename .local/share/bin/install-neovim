@@ -26,6 +26,7 @@ install_lua_server() {
   cd "$LUA_SERVER_PATH" && ./3rd/luamake/luamake rebuild
 }
 
+git clone https://github.com/jasper-schnabel/neovim.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
 sudo npm i -g typescript typescript-language-server vscode-langservers-extracted emmet-ls bash-language-server
 install_lua_server
 git clone --depth=1 https://github.com/savq/paq-nvim.git "$HOME/.local/share/nvim/site/pack/paqs/start/paq-nvim"

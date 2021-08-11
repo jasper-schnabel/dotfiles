@@ -65,12 +65,12 @@ super + c
   clipmenu -c -l 14 -bw 3 -ww 600 -p "copy:"
 
 # mount menu
-super + shift + c
-  ~/.local/share/bin/dmenu/dmenu_mount
+# super + shift + c
+  # ~/.local/share/bin/dmenu/dmenu_mount
 
 # duckduckgo menu
-super + y
-  ~/.local/share/bin/dmenu/dmenu_ddg
+# super + y
+  # ~/.local/share/bin/dmenu/dmenu_ddg
 
 # lock the screen 
 XF86Display

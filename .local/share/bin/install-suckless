@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
+  cat <<EOF
+\$ install-suckless [FLAGS]
+Install my suckless tools.
+See: https://github.com/jasper-schnabel/suckless
+
+Flags:
+  -h: this menu, --help shows this too
+EOF
+  exit 1
+fi
+
+command -v git >/dev/null || { echo "error: git is not installed, exiting..."; exit 1; }
+
+SUCKLESS_PATH="$HOME/code/suckless"
+
+git clone https://github.com/jasper-schnabel/suckless.git "$SUCKLESS_PATH"
+cd "$SUCKLESS_PATH/slock" && sudo make install && sudo make clean && rm -f config.h
+cd "$SUCKLESS_PATH/dmenu" && sudo make install && sudo make clean && rm -f config.h
+cd "$SUCKLESS_PATH/dwm" && sudo make install && sudo make clean && rm -f config.h
+
+tput setaf 3; echo "\nEverything installed."
