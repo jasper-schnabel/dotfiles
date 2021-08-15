@@ -56,7 +56,7 @@ text_icon_padding = 0
 frame_width = 2
 
 # frame color
-frame_color = "#1DA1F2"
+frame_color = "#005FD7"
 
 # corner radius
 corner_radius = 0
@@ -224,24 +224,24 @@ context = mod4+a
 
 [urgency_low]
 
-background = "#1E1E1E"
-foreground = "#C7CFDE"
-frame_color = "#9CDCFE"
+background = "#1C1C1C"
+foreground = "#EFF0EB"
+frame_color = "#00D7FF"
 timeout = 15
 # icon = ~/.local/share/icons/dunst-low.png
 
 [urgency_normal]
 
-background = "#1E1E1E"
-foreground = "#C7CFDE"
-frame_color = "#1DA1F2"
+background = "#1C1C1C"
+foreground = "#EFF0EB"
+frame_color = "#005FD7"
 timeout = 15
 # icon = ~/.local/share/icons/dunst-normal.png
 
 [urgency_critical]
 
-background = "#1E1E1E"
-foreground = "#F44747"
-frame_color = "#F44747"
+background = "#1C1C1C"
+foreground = "#FF0000"
+frame_color = "#FF0000"
 timeout = 0
 # icon = ~/.local/share/icons/dunst-critical.png

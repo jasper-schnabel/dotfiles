@@ -79,7 +79,7 @@ alias la="exa --color always -a"
 alias l1="exa --color always -1a"
 alias ll="exa --color always -la"
 alias lt="exa --color always -T"
-alias lat="exa --color always -T -a"
+alias lat="exa --color always -T -a -I='*.git'"
 
 # mounting
 alias lssm="simple-mtpfs -l"

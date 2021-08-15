@@ -1,28 +1,28 @@
 # zathura config
 
 # background and foreground
-set default-bg '#1E1E1E' 
-set default-fg '#C7CFDE'
+set default-bg '#1C1C1C'
+set default-fg '#EFF0EB'
 
 # background and foreground for statusbar
-set statusbar-bg '#2C323C'
-set statusbar-fg '#C7CFDE'
+set statusbar-bg '#282A36'
+set statusbar-fg '#EFF0EB'
 
 # background and foreground for command line
-set inputbar-bg '#2C323C'
-set inputbar-fg '#C7CFDE'
+set inputbar-bg '#282A36'
+set inputbar-fg '#EFF0EB'
 
 # background and foreground for completion menu
-set completion-bg '#2C323C'
-set completion-fg '#C7CFDE'
+set completion-bg '#282A36'
+set completion-fg '#EFF0EB'
 
 # background and foreground for highlighted item in completion menu
-set completion-highlight-bg '#1DA1F2'
-set completion-highlight-fg '#2C323C'
+set completion-highlight-bg '#005FD7'
+set completion-highlight-fg '#282A36'
 
-# background and foreground for	group in completion menu
-set completion-group-bg '#1E1E1E'
-set completion-group-fg '#C7CFDE'
+# background and foreground for group in completion menu
+set completion-group-bg '#1C1C1C'
+set completion-group-fg '#EFF0EB'
 
 # use the system clipboard
 set selection-clipboard clipboard

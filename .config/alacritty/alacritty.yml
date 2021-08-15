@@ -41,28 +41,28 @@ bold_italic:
 # colors
 colors:
   primary:
-    background: '#1E1E1E'
-    foreground: '#C7CFDE'
+    background: '#1C1C1C'
+    foreground: '#EFF0EB'
 
   normal:
     black: '#2C323C'
-    red: '#F44747'
-    green: '#23D18B'
-    yellow: '#FFCC66'
-    blue: '#1DA1F2'
-    magenta: '#C586C0'
-    cyan: '#9CDCFE'
-    white: '#C7CFDE'
+    red: '#FF0000'
+    green: '#00FF5F'
+    yellow: '#FDFD00'
+    blue: '#005FD7'
+    magenta: '#FF0085'
+    cyan: '#00D7FF'
+    white: '#EFF0EB'
 
 # cursor colors
 cursor:
-  text: '#1E1E1E'
-  cursor: '#C7CFDE'
+  text: '#1C1C1C'
+  cursor: '#EFF0EB'
 
 # selection colors
 selection:
-  text: '#1E1E1E'
-  background: '#C7CFDE'
+  text: '#1C1C1C'
+  background: '#EFF0EB'
 
 # hints to open with mappings
 hints:
