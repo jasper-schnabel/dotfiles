@@ -3,8 +3,8 @@
 # window class and title
 window:
   class:
-    instance: alacritty
-    general: alacritty
+    instance: Alacritty
+    general: Alacritty
   title: Alacritty
 
 # window padding
