@@ -17,7 +17,7 @@ alias alert="notify-send"
 alias clp="colorpicker --short --preview --one-shot"
 alias upm="sudo reflector --country Germany --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 calc () {
-  node -e 'console.log($@)'
+  node -e "console.log($@)"
 }
 
 # operations

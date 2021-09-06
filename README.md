@@ -1,6 +1,6 @@
 # dotfiles
 
-A simple and powerful archlinux setup, kinda always WIP!
+A simple and powerful archlinux setup, always kinda WIP!
 
 ## Features
 
@@ -10,7 +10,7 @@ A simple and powerful archlinux setup, kinda always WIP!
 - mpd, ncmpcpp and beets
 - zathura, imv and mpv
 - conky and dunst
-- [dmenu and slock](https://github.com/jasper-schnabel/suckless)
+- [dwm, dmenu and slock](https://github.com/jasper-schnabel/suckless)
 - sxhkd
 
 ### Requirements
@@ -28,8 +28,8 @@ A simple and powerful archlinux setup, kinda always WIP!
 - file manager
 - RSS feed reader
 - scripts:
-  - archiver
+  - archiver/extractor
   - dmenu_mount and dmenu_ddg
 - installation method
-- window manager
 - statusbar
+- eslint

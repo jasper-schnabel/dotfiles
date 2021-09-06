@@ -16,6 +16,9 @@ command -v npm >/dev/null || { echo "error: npm is not installed, exiting..."; e
 command -v git >/dev/null || { echo "error: git is not installed, exiting..."; exit 1; }
 command -v ninja >/dev/null || { echo "error: ninja is not installed, exiting..."; exit 1; }
 command -v nvim >/dev/null || { echo "error: nvim is not installed, exiting..."; exit 1; }
+command -v fzf >/dev/null || { echo "error: fzf is not installed, exiting..."; exit 1; }
+command -v rg >/dev/null || { echo "error: rg is not installed, exiting..."; exit 1; }
+command -v fd >/dev/null || { echo "error: fd is not installed, exiting..."; exit 1; }
 
 LUA_SERVER_PATH="$HOME/.local/share/nvim/lua-language-server"
 
