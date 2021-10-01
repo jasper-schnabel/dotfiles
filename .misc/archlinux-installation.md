@@ -2,7 +2,7 @@
 
 > Note: This is an installation guide for personal use, therefore no guarantee and at your own risk!
 
-## Riquirements
+## Requirements
 
 - any x86_64 compatible machine
 - at least 2 GB of RAM and 10 GB of free storage
@@ -96,7 +96,7 @@ genfstab -U /mnt > /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-#### Root password
+#### Set root password
 
 ```
 passwd
@@ -108,7 +108,7 @@ passwd
 systemctl enable NetworkManager
 ```
 
-#### Time zone
+#### Setup time zone
 
 ```
 timedatectl set-ntp true
@@ -151,10 +151,10 @@ mkdir /boot/efi
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 
 fdisk /dev/main_partition
-	p	to see which partition is the windows_boot_partition
+	p	to see which partition is the boot_partition
 	q	to quit
 
-mount /dev/window_boot_partition /boot/efi
+mount /dev/boot_partition /boot/efi
 lsblk
 ```
 
@@ -209,11 +209,11 @@ Use `nvim /etc/sudoers` to uncomment or add:
 #### Install yay
 
 ```
+cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd
-rm -rf yay
 ```
 
 #### Install packages and dotfiles
@@ -226,10 +226,8 @@ make install
 #### Enable and start services
 
 ```
-systemctl enable bluetooth.service
-systemctl start bluetooth.service
-systemctl enable cups.service
-systemctl start cups.service
+sudo systemctl enable --now bluetooth
+sudo systemctl enable --now cups
 ```
 
 #### Hostname
@@ -239,7 +237,7 @@ hostnamectl set-hostname my_hostname
 hostnamectl
 ```
 
-#### Xorg Keyboard and sh shell
+#### Xorg Keyboard and shell
 
 ```
 localectl set-x11-keymap de pc104 nodeadkeys
