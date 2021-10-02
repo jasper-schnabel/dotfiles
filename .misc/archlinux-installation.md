@@ -143,20 +143,7 @@ Use `nvim /etc/vconsole.conf` to add:
 KEYMAP=de-latin1
 ```
 
-#### Boot loader
-
-```
-os-prober
-mkdir /boot/efi
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-
-fdisk /dev/main_partition
-	p	to see which partition is the boot_partition
-	q	to quit
-
-mount /dev/boot_partition /boot/efi
-lsblk
-```
+#### Boot loader and windows setup
 
 Use `nvim /etc/default/grub` to add:
 
@@ -165,6 +152,16 @@ GRUB_DISABLE_OS_PROBER=false
 ```
 
 ```
+os-prober
+mkdir /boot/efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+
+fdisk /dev/main_partition
+	p	to see which partition is the windows_boot_partition
+	q	to quit
+
+mount /dev/windows_boot_partition /boot/efi
+lsblk
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -220,7 +217,7 @@ cd
 
 ```
 git clone https://github.com/jasper-schnabel/dotfiles.git .
-make install
+install-dotfiles
 ```
 
 #### Enable and start services
