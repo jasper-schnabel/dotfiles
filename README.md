@@ -10,7 +10,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 - mpd, ncmpcpp and beets
 - zathura, imv and mpv
 - conky and dunst
-- [dwm, dmenu and slock](https://github.com/jasper-schnabel/suckless)
+- [dmenu and slock](https://github.com/jasper-schnabel/suckless)
 - sxhkd
 
 ### Requirements
@@ -31,5 +31,10 @@ A simple and powerful archlinux setup, always kinda WIP!
   - archiver/extractor
   - dmenu_mount and dmenu_ddg
 - installation method
+- window manager
 - statusbar
 - eslint
+
+### Credits
+
+- [jneidel](https://github.com/jneidel) - For helping me and using his [dotfiles](https://github.com/jneidel/dotfiles) as reference.

@@ -46,5 +46,5 @@ clipmenud &
 # start mpd
 mpd &
 
-# start dwm
-exec dwm
+# start wm
+# not chosen yet

@@ -16,9 +16,11 @@ command -v git >/dev/null || { echo "error: git is not installed, exiting..."; e
 
 SUCKLESS_PATH="$HOME/code/suckless"
 
+# pull configs
 git clone https://github.com/jasper-schnabel/suckless.git "$SUCKLESS_PATH"
+
+# build and cleanup
 cd "$SUCKLESS_PATH/slock" && sudo make install && sudo make clean && rm -f config.h
 cd "$SUCKLESS_PATH/dmenu" && sudo make install && sudo make clean && rm -f config.h
-cd "$SUCKLESS_PATH/dwm" && sudo make install && sudo make clean && rm -f config.h
 
 tput setaf 3; echo "\nEverything installed."
