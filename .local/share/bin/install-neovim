@@ -31,7 +31,7 @@ install_lua_server() {
 git clone https://github.com/jasper-schnabel/neovim.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
 
 # pull dependencies
-sudo npm i -g typescript typescript-language-server vscode-langservers-extracted emmet-ls bash-language-server
+sudo npm i -g typescript typescript-language-server vscode-langservers-extracted ls_emmet bash-language-server
 sudo pacman -S texlab fzf ninja
 
 install_lua_server
