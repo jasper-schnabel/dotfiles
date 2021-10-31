@@ -79,7 +79,7 @@ sort = yes
 idle_threshold = 120
 
 # font
-font = FiraCode 10
+font = Inconsolata Nerd Font 10
 
 # line height
 # line_height = 0

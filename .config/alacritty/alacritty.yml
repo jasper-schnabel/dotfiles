@@ -18,24 +18,25 @@ window:
 
 # font
 font:
-  size: 7.0
+  size: 8.0
+
 normal:
-  family: FiraCode
+  family: Inconsolata Nerd Font
   style: Regular
 
 # bold font
 bold:
-  family: FiraCode
+  family: Inconsolata Nerd Font
   style: Bold
 
 # italic font
 italic:
-  family: FiraCode
+  family: Inconsolata Nerd Font
   style: Italic
 
 # bold italic font
 bold_italic:
-  family: FiraCode
+  family: Inconsolata Nerd Font
   style: Bold Italic
 
 # colors
