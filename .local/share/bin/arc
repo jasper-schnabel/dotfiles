@@ -1,0 +1,56 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ] || [ -z "$2" ]; then
+  cat <<EOF
+\$ arc [FLAGS] [INPUT]
+Easily extract & create archives of various formats.
+
+Parameters:
+  \$1: archive to extract/create
+  \$2: the files/directories to archive (required by the -c flag)
+
+Flags:
+  -h: this menu, --help shows this too
+  -x: extract archive
+  -c: create archive
+
+Example:
+  $ arc -x archive.tar.gz
+  $ arc -c archive.zip (files/directories to archive)
+EOF
+  exit 1
+fi
+
+command -v tar >/dev/null || { echo "error: tar is not installed, exiting..."; exit 1; }
+command -v unzip >/dev/null || { echo "error: unzip is not installed, exiting..."; exit 1; }
+command -v zip >/dev/null || { echo "error: zip is not installed, exiting..."; exit 1; }
+
+ARCHIVE="$2"
+
+# extract archive
+if [ "$1" = '-x' ]; then
+  case "$ARCHIVE" in
+    *.tar.bz2|*.tbz2) tar -xvjf "$ARCHIVE" --one-top-level;;
+    *.tar.gz|*.tgz) tar -xvzf "$ARCHIVE" --one-top-level;;
+    *.txz) tar xvJf "$ARCHIVE" --one-top-level;;
+    *.tar|*.tar.xz) tar -xvf "$ARCHIVE" --one-top-level;;
+    *.zip) unzip -d ${ARCHIVE%".zip"} "$ARCHIVE";;
+    *) echo "arc: $ARCHIVE - unknown archive method.";;
+  esac
+# create archive
+elif [ "$1" = '-c' ]; then
+  if [ -n "$3" ]; then
+    case "$ARCHIVE" in
+      *.tar.bz2|*.tbz2) tar -cvjf "$ARCHIVE" "$3";;
+      *.tar.gz|*.tgz) tar -cvzf "$ARCHIVE" "$3";;
+      *.txz) tar -cvJf "$ARCHIVE" "$3";;
+      *.tar|*.tar.xz) tar -cvf "$ARCHIVE" "$3";;
+      *.zip) zip -r "$ARCHIVE" "$3";;
+      *) echo "arc: $3 - unknown archive method.";;
+    esac
+  else
+    echo "No target directory provided."
+  fi
+else
+  echo "Invalid option, try 'arc -h' for more information."
+fi

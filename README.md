@@ -24,16 +24,11 @@ A simple and powerful archlinux setup, always kinda WIP!
 
 ### Todo
 
-- tmux or an alternative
-- file manager
-- RSS feed reader
-- scripts:
-  - archiver/extractor
-  - dmenu_mount and dmenu_ddg
-- installation method
 - window manager
 - statusbar
+- file manager
 - eslint
+- tmux or an alternative
 
 ### Credits
 

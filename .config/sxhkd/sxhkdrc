@@ -64,14 +64,6 @@ super + shift + i
 super + c 
   clipmenu -c -l 14 -bw 3 -ww 600 -p "copy:"
 
-# mount menu
-# super + shift + c
-  # ~/.local/share/bin/dmenu/dmenu_mount
-
-# duckduckgo menu
-# super + y
-  # ~/.local/share/bin/dmenu/dmenu_ddg
-
 # lock the screen 
 XF86Display
   slock
@@ -87,6 +79,22 @@ Print
 # screenshot (select screen snippet)
 super + Print
   ~/.local/share/bin/shot -s
+
+# close notifications
+super + n
+  dunstctl close
+
+# close all notifications
+super + shift + n
+  dunstctl close-all
+
+# show notification history
+super + a
+  dunstctl history-pop
+
+# dunst context menu
+super + shift + a
+  dunstctl action
 
 # mpd toggle pause
 XF86Favorites

@@ -208,20 +208,6 @@ mouse_right_click = close_current
 # calculate dpi to use on a per-monitor basis
 # per_monitor_dpi = false
 
-[shortcuts]
-
-# close
-close = mod4+n
-
-# close all
-close_all = mod4+shift+n
-
-# history
-history = mod4+shift+a
-
-# context menu
-context = mod4+a
-
 [urgency_low]
 
 background = "#1C1C1C"

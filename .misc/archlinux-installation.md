@@ -203,12 +203,12 @@ Use `nvim /etc/sudoers` to uncomment or add:
 
 `exit`
 
-#### Install yay
+#### Install paru
 
 ```
 cd /tmp
-git clone https://aur.archlinux.org/yay.git
-cd yay
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 cd
 ```
