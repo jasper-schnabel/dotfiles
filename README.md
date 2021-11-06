@@ -10,7 +10,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 - mpd, ncmpcpp and beets
 - zathura, imv and mpv
 - conky and dunst
-- [dmenu and slock](https://github.com/jasper-schnabel/suckless)
+- dmenu and slock
 - sxhkd
 
 ### Requirements

@@ -4,7 +4,6 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
   cat <<EOF
 \$ install-suckless [FLAGS]
 Install my suckless tools.
-See: https://github.com/jasper-schnabel/suckless
 
 Flags:
   -h: this menu, --help shows this too
@@ -14,10 +13,7 @@ fi
 
 command -v git >/dev/null || { echo "error: git is not installed, exiting..."; exit 1; }
 
-SUCKLESS_PATH="$HOME/code/suckless"
-
-# pull configs
-git clone https://github.com/jasper-schnabel/suckless.git "$SUCKLESS_PATH"
+SUCKLESS_PATH="$HOME/.config"
 
 # build and cleanup
 cd "$SUCKLESS_PATH/slock" && sudo make install && sudo make clean && rm -f config.h
