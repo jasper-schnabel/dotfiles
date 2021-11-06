@@ -1,25 +1,20 @@
 # zsh prompt
 
-# needes to work
+# needed to work
 setopt PROMPT_SUBST
 setopt PROMPT_SP
 
-# prompt char
+# prompt character
 prompt_char () {
   echo -n "%B%{%F{white}%}> %b"
 }
 
-# hostname if connected via SSH
-get-user-host() {  
-  [ -n "$SSH_CLIENT" ] && echo -n "%B%{%F{magenta}%} %n@%M %b"
-}
-
-# pwd
+# current working directory
 get-pwd() {
   echo -n "%B%{%F{blue}%} %~ %b"
 }
 
-# git
+# git info
 get-git-info() { 
   local git_branch=`git symbolic-ref --short HEAD 2> /dev/null`
   if [[ -n "$git_branch" ]]; then
@@ -32,5 +27,5 @@ get-git-info() {
   fi
 }
 
-# prompt
-PROMPT='$(get-user-host; get-pwd; get-git-info; prompt_char)'
+# assemble prompt
+PROMPT='$(get-pwd; get-git-info; prompt_char)'

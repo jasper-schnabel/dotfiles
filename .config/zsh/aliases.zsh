@@ -2,9 +2,7 @@
 
 # misc
 alias chx="chmod +x"
-alias k="killall"
 alias xwp="xwallpaper --zoom"
-alias speet="speedtest-cli --simple"
 alias t="touch"
 alias diff="/bin/diff --color"
 alias curlo="curl -O"
@@ -23,11 +21,6 @@ calc () {
 # operations
 alias -g WC="| wc -l"
 alias -g CP="| xclip -f -selection clip -rmlastnl"
-alias -g G="| rg"
-alias -g L="| less"
-alias -g H="| head"
-alias -g T="| tail"
-alias -g HP="--help | less"
 
 ## redirect outputs
 alias -g N1="> /dev/null"
@@ -57,10 +50,10 @@ mdc() {
 
 # navigation
 alias ..="cd .." 
-alias 2.="cd ../.."
-alias 3.="cd ../../.."
-alias 4.="cd ../../../.."
-alias 5.="cd ../../../../.."
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
 
 # utilities
 alias rm="sudo /bin/rm -v"
@@ -87,19 +80,20 @@ alias smount="simple-mtpfs --device 1"
 alias usmount="fusermount -u"
 
 # youtube-dl
-alias ytmp3="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(title)s.%(ext)s'"
-alias ytdl="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(title)s.%(ext)s'"
+alias ytmp3="youtube-dl -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(title)s.%(ext)s'"
+alias ytmp3p="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s''"
+alias ytdl="youtube-dl -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(title)s.%(ext)s'"
+alias ytdlp="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s''"
 
 # custom
 alias cdd="cd ~/code/dotfiles"
 alias cdn="cd ~/.config/nvim"
-alias cds="cd ~/code/suckless"
 alias todo="nvim +ZenMode ~/ct/documents/todo"
 alias gn="git config --global user.name"
 alias ge="git config --global user.email"
 alias gran="git remote add origin https://github.com/jasper-schnabel/neovim" 
 alias grad="git remote add origin https://github.com/jasper-schnabel/dotfiles" 
-alias gras="git remote add origin https://github.com/jasper-schnabel/suckless" 
+alias gcl="git clone"
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add"
