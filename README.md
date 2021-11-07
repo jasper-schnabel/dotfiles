@@ -24,11 +24,11 @@ A simple and powerful archlinux setup, always kinda WIP!
 
 ### Todo
 
-- window manager
-- statusbar
+- window manager and statusbar
 - file manager
 - eslint
 - tmux or an alternative
+- review all config files and bring them up to date
 
 ### Credits
 
