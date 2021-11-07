@@ -9,8 +9,11 @@ xset r rate 200 100 &
 # higher touchpad speed
 xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.6 &
 
-# natural-scrolling for the touchpad 
+# natural-scrolling
 xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Natural Scrolling Enabled' 1 &
+
+# tap-to-click
+xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Tapping Enabled' 1 &
 
 # higher trackpoint speed
 xinput --set-prop 'TPPS/2 ALPS TrackPoint' 'libinput Accel Speed' 0.6 &

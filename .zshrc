@@ -41,6 +41,9 @@ bindkey -s "^o" 'cd `fd -H -td | sk --height=20% --color=16,pointer:4`^M'
 eval "`lua /usr/share/z.lua/z.lua --init zsh enhanced once`"
 export _ZL_DATA="$HOME/.local/share/zlua"
 
+# system information
+fetch
+
 # autostart X
 if [ `tty` = /dev/tty1 ]; then
   startx
