@@ -81,9 +81,9 @@ alias usmount="fusermount -u"
 
 # youtube-dl
 alias ytmp3="youtube-dl -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(title)s.%(ext)s'"
-alias ytmp3p="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s''"
+alias ytmp3p="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s'"
 alias ytdl="youtube-dl -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(title)s.%(ext)s'"
-alias ytdlp="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s''"
+alias ytdlp="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s'"
 
 # custom
 alias cdd="cd ~/code/dotfiles"
