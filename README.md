@@ -5,7 +5,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 ## Features
 
 - zsh
-- [neovim](https://github.com/jasper-schnabel/neovim)
+- [neovim](https://github.com/jasper-schnabel/neovim-lua)
 - alacritty
 - mpd, ncmpcpp and beets
 - zathura, imv and mpv
