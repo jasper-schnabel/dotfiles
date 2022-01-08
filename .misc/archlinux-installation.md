@@ -153,14 +153,14 @@ GRUB_DISABLE_OS_PROBER=false
 
 ```
 os-prober
-mkdir /boot/efi
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+mkdir /boot-windows
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Grub
 
 fdisk /dev/main_partition
 	p	to see which partition is the windows_boot_partition
 	q	to quit
 
-mount /dev/windows_boot_partition /boot/efi
+mount /dev/windows_boot_partition /boot-windows
 lsblk
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
