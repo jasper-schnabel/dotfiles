@@ -15,8 +15,6 @@ fi
 command -v npm >/dev/null || { echo "error: npm is not installed, exiting..."; exit 1; }
 command -v git >/dev/null || { echo "error: git is not installed, exiting..."; exit 1; }
 command -v nvim >/dev/null || { echo "error: nvim is not installed, exiting..."; exit 1; }
-command -v rg >/dev/null || { echo "error: rg is not installed, exiting..."; exit 1; }
-command -v fd >/dev/null || { echo "error: fd is not installed, exiting..."; exit 1; }
 
 LUA_SERVER_PATH="$HOME/.local/share/nvim/lua-language-server"
 
@@ -31,8 +29,8 @@ install_lua_server() {
 git clone https://github.com/jasper-schnabel/neovim.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
 
 # pull dependencies
-sudo npm i -g typescript typescript-language-server vscode-langservers-extracted ls_emmet bash-language-server
-sudo pacman -S texlab fzf ninja
+sudo npm i -g typescript typescript-language-server vscode-langservers-extracted ls_emmet
+sudo pacman -S rust-analyzer ninja
 
 install_lua_server
 
