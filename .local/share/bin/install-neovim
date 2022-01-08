@@ -39,4 +39,4 @@ git clone --depth=1 https://github.com/savq/paq-nvim.git "$HOME/.local/share/nvi
 tput setaf 3; echo "\nPlease run 'nvim +PaqSync' and then reopen neovim."
 
 # remove build dependencies
-sudo pacman -Rsn ninja
+sudo pacman -Rns ninja
