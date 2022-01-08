@@ -4,7 +4,7 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
   cat <<EOF
 \$ install-neovim [FLAGS]
 Install everything required for my neovim setup.
-See: https://github.com/jasper-schnabel/neovim
+See: https://github.com/jasper-schnabel/neovim-lua
 
 Flags:
   -h: this menu, --help shows this too
@@ -26,7 +26,7 @@ install_lua_server() {
 }
 
 # pull config
-git clone https://github.com/jasper-schnabel/neovim.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
+git clone https://github.com/jasper-schnabel/neovim-lua.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
 
 # pull dependencies
 sudo npm i -g typescript typescript-language-server vscode-langservers-extracted ls_emmet
