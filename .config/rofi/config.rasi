@@ -1,0 +1,11 @@
+/* rofi config */
+configuration {
+  modi: "run";
+  /* overwrite some default keymappings */
+  kb-remove-to-eol: "Control+m";
+  kb-accept-entry: "Control+y,Return,KP_Enter";
+  kb-row-up: "Up,Control+p,Control-k,ISO_Left_Tab";
+  kb-row-down: "Down,Control+n,Control+j";
+}
+
+@theme "theme"

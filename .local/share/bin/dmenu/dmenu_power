@@ -12,7 +12,7 @@ EOF
 fi
 
 command -v dmenu >/dev/null || { echo "error: dmenu is not installed, exiting..."; exit 1; }
-command -v slock >/dev/null || { echo "error: slock is not installed, exiting..."; exit 1; }
+command -v physlock >/dev/null || { echo "error: physlock is not installed, exiting..."; exit 1; }
 
 case `printf "reboot\nshutdown\nsuspend\nlock\nexit" | dmenu -c -l 5 -bw 3 -ww 300 -p "power:"` in
   "reboot")
@@ -20,9 +20,9 @@ case `printf "reboot\nshutdown\nsuspend\nlock\nexit" | dmenu -c -l 5 -bw 3 -ww 3
   "shutdown")
     poweroff;;
   "suspend")
-    systemctl suspend && slock;;
+    systemctl suspend && physlock;;
   "lock")
-    slock;;
+    physlock;;
   "exit")
     killall xinit;;
 esac

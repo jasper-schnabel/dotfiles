@@ -1,0 +1,50 @@
+/* rofi theme */
+* {
+  black: #1C1C1C;
+  white: #EFF0EB;
+  gray: #282A36;
+  yellow: #FDFD00;
+  blue: #005FD7;
+  background-color: @black;
+  text-color: @white;
+  font: "Inconsolata 12";
+}
+
+window {
+  width: 32em;
+  border: 0.2em;
+  border-color: @gray;
+	padding: 0.6em;
+}
+
+listview {
+  lines: 8;
+}
+
+prompt {
+	background-color: @yellow;
+  text-color: @black;
+	padding: 0.6em;
+}
+
+entry {
+	padding: 0.6em;
+}
+
+element {
+  padding: 0.6em;
+}
+
+element-text {
+  text-color: @white;
+  background-color: @black;
+}
+
+element.selected {
+  background-color: @blue;
+}
+
+element-text.selected {
+  text-color: @black;
+  background-color: @blue;
+}

@@ -25,7 +25,7 @@ unclutter --timeout 2 &
 xset -b b off &
 
 # lock the screen after 5 minutes and when suspending
-xset s 300 && xss-lock slock &
+xset s 300 && xss-lock physlock &
 
 # set wallpaper
 xwallpaper --zoom ~/.local/share/wallpaper.png &
