@@ -16,11 +16,6 @@ export HISTFILE="$HOME/.local/share/zsh_history"
 # bat
 export BAT_THEME="ansi"
 
-# clipmenu
-export CM_SELECTIONS="clipboard"
-export CM_MAX_CLIPS="50"
-export CM_LAUNCHER="dmenu"
-
 # colorize manpages
 export LESS_TERMCAP_mb=`tput sgr0; tput setaf 7`
 export LESS_TERMCAP_md=`tput bold; tput setaf 2`

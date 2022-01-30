@@ -6,7 +6,7 @@ super + Return
 
 # program launcher
 super + d
-  dmenu_run -p "run:"
+  rofi -show run
 
 # file manager
 # super + e
@@ -50,19 +50,19 @@ super + shift + m
 
 # power menu
 XF86Tools
-  ~/.local/share/bin/dmenu/dmenu_power
+  ~/.local/share/bin/rofi/rofi-power
 
 # find menu
 super + i
-  ~/.local/share/bin/dmenu/dmenu_find
+  ~/.local/share/bin/rofi/rofi-find
 
 # kill menu
 super + shift + i
-  ~/.local/share/bin/dmenu/dmenu_kill
+  ~/.local/share/bin/rofi/rofi-kill
 
-# clip menu
+# clipboard menu
 super + c 
-  clipmenu -c -l 14 -bw 3 -ww 600 -p "copy:"
+  rofi -show clipboard
 
 # lock the screen 
 XF86Display

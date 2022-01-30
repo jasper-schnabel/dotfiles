@@ -43,8 +43,8 @@ sxhkd &
 # start dunst
 dunst &
 
-# start clipmenu
-clipmenud &
+# start greenclip
+greenclip daemon &
 
 # start mpd
 mpd &

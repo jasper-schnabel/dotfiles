@@ -164,7 +164,7 @@ sticky_history = yes
 history_length = 40
 
 # dmenu path
-dmenu = /usr/bin/dmenu -p dunst:
+dmenu = /usr/bin/rofi -dmenu -p "dunst"
 
 # browser path
 browser = /usr/bin/firefox -new-tab
