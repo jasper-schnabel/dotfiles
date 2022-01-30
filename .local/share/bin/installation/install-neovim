@@ -16,27 +16,13 @@ command -v npm >/dev/null || { echo "error: npm is not installed, exiting..."; e
 command -v git >/dev/null || { echo "error: git is not installed, exiting..."; exit 1; }
 command -v nvim >/dev/null || { echo "error: nvim is not installed, exiting..."; exit 1; }
 
-LUA_SERVER_PATH="$HOME/.local/share/nvim/lua-language-server"
-
-install_lua_server() {
-  git clone https://github.com/sumneko/lua-language-server "$LUA_SERVER_PATH"
-  cd "$LUA_SERVER_PATH" && git submodule update --init --recursive
-  cd "$LUA_SERVER_PATH/3rd/luamake" && compile/install.sh
-  cd "$LUA_SERVER_PATH" && ./3rd/luamake/luamake rebuild
-}
-
 # pull config
 git clone https://github.com/jasper-schnabel/neovim-lua.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
 
 # pull dependencies
 sudo npm i -g typescript typescript-language-server vscode-langservers-extracted ls_emmet
-sudo pacman -S rust-analyzer ninja
-
-install_lua_server
+sudo pacman -S rust-analyzer lua-language-server
 
 # pkg mangager
 git clone --depth=1 https://github.com/savq/paq-nvim.git "$HOME/.local/share/nvim/site/pack/paqs/start/paq-nvim"
 tput setaf 3; echo "\nPlease run 'nvim +PaqSync' and then reopen neovim."
-
-# remove build dependencies
-sudo pacman -Rns ninja
