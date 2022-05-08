@@ -20,7 +20,7 @@ visualizer_output_name = "MPD Visualizer"
 visualizer_in_stereo = yes
 
 # visualizer type
-# possible values are: 
+# possible values are:
 #   spectrum
 #   wave
 #   wave_filled
@@ -39,7 +39,7 @@ visualizer_look = "❙❙"
 # visualizer colors
 visualizer_color = green, blue, blue, red, red, yellow, yellow, yellow, yellow
 
-# always use visualizer_look instead of the default 
+# always use visualizer_look instead of the default
 visualizer_spectrum_smooth_look = no
 
 # inactivity after playlist highlighting will be disabled (0 = always on)
@@ -83,11 +83,11 @@ centered_cursor = yes
 seek_time = 5
 volume_change_step = 5
 
-# progressbar look  
+# progressbar look
 progressbar_look = "───"
 
 # group media library by album artist tag
-# possible values are: 
+# possible values are:
 #   artist
 #   album_artist
 #   date
@@ -119,7 +119,7 @@ ignore_leading_the = yes
 # if you don't want to use a non-color attribute anymore, just put it again,
 # but this time insert character '/' between '$' and attribute character
 
-# song format 
+# song format
 # possible values are:
 #   %l - length
 #   %f - filename
@@ -157,7 +157,7 @@ ignore_leading_the = yes
 #   a - use alternative character set
 
 # overall header format and colors
-alternative_header_first_line_format = $1$b$aqqu$/a {$5$b%t}|{$8%f} $1$b$atqq$/a 
+alternative_header_first_line_format = $1$b$aqqu$/a {$5$b%t}|{$8%f} $1$b$atqq$/a
 alternative_header_second_line_format = {$8$b%a - $8$b%b}|{$8%f}
 
 # format for the currently playing song
@@ -225,7 +225,7 @@ empty_tag_color = white
 main_window_color = white
 
 # colors for result info
-color1 = white 
+color1 = white
 color2 = white
 
 # borders

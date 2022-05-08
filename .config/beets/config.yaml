@@ -30,7 +30,7 @@ embedart:
 # lyrics plugin
 lyrics:
   force: yes
-  sources: genius lyricwiki musixmatch 
+  sources: genius lyricwiki musixmatch
 
 # ui for the commandline
 ui:

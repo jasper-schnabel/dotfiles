@@ -33,11 +33,11 @@ a = zoom actual
 # gif playback
 w = toggle_playing
 
-# slideshow 
+# slideshow
 s = slideshow +3
 <Shift+S> = slideshow 0
 
-# slideshow time 
+# slideshow time
 t = slideshow +1
 <Shift+T> = slideshow -1
 
@@ -57,8 +57,8 @@ b = exec setbg -i
 # rotate the current image by 90 degrees
 <Shift+R> = exec convert -rotate 90 $imv_current_file $imv_current_file
 
-# flip the current image 
+# flip the current image
 <Shift+X> = exec convert -flip $imv_current_file $imv_current_file
 
-# flop the current image 
+# flop the current image
 <Shift+Y> = exec convert -flop $imv_current_file $imv_current_file

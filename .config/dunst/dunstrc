@@ -6,7 +6,7 @@
 monitor = 0
 
 # focus follow rule
-# possible values are: 
+# possible values are:
 #   mouse
 #   keyboard
 #   none

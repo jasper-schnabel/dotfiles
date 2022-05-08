@@ -16,7 +16,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 ### Requirements
 
 - archlinux
-- neovim version >= 0.5
+- neovim nightly
 
 ### Installation
 
@@ -25,7 +25,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 ### Todo
 
 - window manager and statusbar
-- file manager
+- add https://github.com/gokcehan/lf
 - review all config files and bring them up to date
 
 ### Credits

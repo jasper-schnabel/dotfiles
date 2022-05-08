@@ -13,6 +13,7 @@ fi
 
 rm -rf ~/Applications/
 rm -rf ~/Desktop/
+rm -rf ~/.cargo/
 
 rm -f ~/.lesshst
 rm -f ~/.lesshsQ

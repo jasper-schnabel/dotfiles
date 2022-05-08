@@ -14,6 +14,7 @@ alias bat="/bin/bat --color always -p -P"
 alias alert="notify-send"
 alias clp="colorpicker --short --preview --one-shot"
 alias upm="sudo reflector --country Germany --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias btub="sudo rfkill unblock all"
 calc () {
   node -e "console.log($@)"
 }
@@ -43,17 +44,17 @@ alias mm="mpv --profile=movie"
 # directory
 alias mkdir="/bin/mkdir -p"
 alias md="mkdir"
-mdc() { 
+mdc() {
   mkdir "$1";
   cd "$1";
 }
 
 # navigation
-alias ..="cd .." 
-alias .2="cd ../.."
-alias .3="cd ../../.."
-alias .4="cd ../../../.."
-alias .5="cd ../../../../.."
+alias ..="cd .."
+alias 2.="cd ../.."
+alias 3.="cd ../../.."
+alias 4.="cd ../../../.."
+alias 5.="cd ../../../../.."
 
 # utilities
 alias rm="sudo /bin/rm -v"
@@ -84,6 +85,9 @@ alias ytmp3="youtube-dl -c -i --retries 4 -x --audio-format 'mp3' --audio-qualit
 alias ytmp3p="youtube-dl --yes-playlist -c -i --retries 4 -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s'"
 alias ytdl="youtube-dl -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(title)s.%(ext)s'"
 alias ytdlp="youtube-dl --yes-playlist -c -i --retries 4 -f 'mp4[height=720]' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s'"
+ytmp3pn() {
+  youtube-dl --yes-playlist -c -i --retries 4 --playlist-items "$2" -x --audio-format 'mp3' --audio-quality '320K' -o '~/Downloads/%(playlist_title)s/%(title)s.%(ext)s' "$1"
+}
 
 # custom
 alias cdd="cd ~/code/dotfiles"
@@ -91,8 +95,8 @@ alias cdn="cd ~/.config/nvim"
 alias todo="nvim +ZenMode ~/ct/documents/todo"
 alias gn="git config --global user.name"
 alias ge="git config --global user.email"
-alias gran="git remote add origin https://github.com/jasper-schnabel/neovim-lua" 
-alias grad="git remote add origin https://github.com/jasper-schnabel/dotfiles" 
+alias gran="git remote add origin https://github.com/jasper-schnabel/neovim-lua"
+alias grad="git remote add origin https://github.com/jasper-schnabel/dotfiles"
 alias gcl="git clone"
 alias gs="git status"
 alias gd="git diff"

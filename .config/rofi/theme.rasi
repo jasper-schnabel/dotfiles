@@ -14,7 +14,7 @@ window {
   width: 32em;
   border: 0.2em;
   border-color: @gray;
-	padding: 0.6em;
+  padding: 0.6em;
 }
 
 listview {
@@ -22,13 +22,13 @@ listview {
 }
 
 prompt {
-	background-color: @yellow;
+  background-color: @yellow;
   text-color: @black;
-	padding: 0.6em;
+  padding: 0.6em;
 }
 
 entry {
-	padding: 0.6em;
+  padding: 0.6em;
 }
 
 element {

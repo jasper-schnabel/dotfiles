@@ -12,7 +12,7 @@ window:
     y: 3
     x: 3
 
-# history 
+# history
   scrolling:
     history: 3000
 

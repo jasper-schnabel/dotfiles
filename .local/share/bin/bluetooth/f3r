@@ -14,6 +14,6 @@ fi
 command -v bluetoothctl >/dev/null || { echo "error: bluetoothctl is not installed, exiting..."; exit 1; }
 command -v pulseaudio >/dev/null || { echo "error: pulseaudio is not installed, exiting..."; exit 1; }
 
-bluetoothctl power on >/dev/null 
+bluetoothctl power on >/dev/null
 bluetoothctl connect FC:A8:9A:BE:84:CE >/dev/null
 notify-send "Connected with JBL Flip3 right."

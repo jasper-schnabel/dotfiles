@@ -20,7 +20,7 @@ command -v nvim >/dev/null || { echo "error: nvim is not installed, exiting...";
 git clone https://github.com/jasper-schnabel/neovim-lua.git "$HOME/.config/nvim" || echo "Neovim config already pulled."
 
 # pull dependencies
-sudo npm i -g typescript typescript-language-server vscode-langservers-extracted ls_emmet
+sudo npm i -g typescript typescript-language-server vscode-langservers-extracted emmet-ls
 sudo pacman -S rust-analyzer lua-language-server
 
 # pkg mangager

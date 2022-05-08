@@ -15,7 +15,7 @@ get-pwd() {
 }
 
 # git info
-get-git-info() { 
+get-git-info() {
   local git_branch=`git symbolic-ref --short HEAD 2> /dev/null`
   if [[ -n "$git_branch" ]]; then
     if [ -z "$(git status --porcelain)" ]; then

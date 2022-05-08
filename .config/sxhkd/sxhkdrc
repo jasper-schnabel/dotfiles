@@ -45,26 +45,22 @@ super + m
   alacritty -e ncmpcpp
 
 # sound mixer
-super + shift + m 
+super + shift + m
   alacritty -e pulsemixer
 
 # power menu
 XF86Tools
   ~/.local/share/bin/rofi/rofi-power
 
-# find menu
-super + i
-  ~/.local/share/bin/rofi/rofi-find
-
 # kill menu
 super + shift + i
   ~/.local/share/bin/rofi/rofi-kill
 
 # clipboard menu
-super + c 
+super + c
   rofi -show clipboard
 
-# lock the screen 
+# lock the screen
 XF86Display
   physlock
 
@@ -98,15 +94,15 @@ super + shift + a
 
 # mpd toggle pause
 XF86Favorites
-	mpc toggle && notify-send "Now Playing" "`mpc current -f '%artist% - %title%'`"
+  mpc toggle && notify-send "Now Playing" "`mpc current -f '%artist% - %title%'`"
 
 # mpd next track
 super + greater
-	mpc next
+  mpc next
 
 # mpd previos track
 super + less
-	mpc prev
+  mpc prev
 
 # increase brightness
 XF86MonBrightnessUp
@@ -125,9 +121,9 @@ XF86AudioLowerVolume
   ~/.local/share/bin/volume -d
 
 # toggle mute
-XF86AudioMute 
+XF86AudioMute
   ~/.local/share/bin/volume -m
 
 # toggle mute microphone
-XF86AudioMicMute 
+XF86AudioMicMute
   ~/.local/share/bin/micro

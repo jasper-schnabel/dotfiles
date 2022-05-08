@@ -3,7 +3,7 @@
 if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -n "$1" ]; then
   cat <<EOF
 \$ lyrics [FLAGS]
-Get the path to the lyrics of 
+Get the path to the lyrics of
 the current song playing in mpd.
 
 Flags:

@@ -53,13 +53,13 @@ lsblk
 
 fdisk /dev/main_partition
 
-	F	to list free unpartitioned space
-	n	to create new boot partition (between at least 200 MB and 300 MB)
-	l	to list partition types
-	t	to change boot partiton type to 'EFI System'
-	n	to create new root partition (the rest of your free space)
-	p	to print the partition table (to check if everything is correct)
- 	w	to write changes and exit fdisk
+  F	to list free unpartitioned space
+  n	to create new boot partition (between at least 200 MB and 300 MB)
+  l	to list partition types
+  t	to change boot partiton type to 'EFI System'
+  n	to create new root partition (the rest of your free space)
+  p	to print the partition table (to check if everything is correct)
+  w	to write changes and exit fdisk
 ```
 
 #### Format partitions
@@ -157,8 +157,8 @@ mkdir /boot-windows
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Grub
 
 fdisk /dev/main_partition
-	p	to see which partition is the windows_boot_partition
-	q	to quit
+  p	to see which partition is the windows_boot_partition
+  q	to quit
 
 mount /dev/windows_boot_partition /boot-windows
 lsblk
