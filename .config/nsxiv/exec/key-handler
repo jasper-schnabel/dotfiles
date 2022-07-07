@@ -1,0 +1,13 @@
+#!/bin/sh
+
+command -v nsxiv >/dev/null || { echo "error: nsxiv is not installed, exiting..."; exit 1; }
+command -v gimp >/dev/null || { echo "error: gimp is not installed, exiting..."; exit 1; }
+command -v setbg >/dev/null || { echo "error: setbg is not installed, exiting..."; exit 1; }
+
+# nsxiv additional keyboard commands for wallpaper and gimp
+case "$1" in
+  "g")
+    while read file; do gimp "$file" & done;;
+  "b")
+    while read file; do setbg "$file" & done;;
+esac

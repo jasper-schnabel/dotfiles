@@ -8,7 +8,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 - [neovim](https://github.com/jasper-schnabel/neovim-lua)
 - alacritty
 - mpd, ncmpcpp and beets
-- zathura, imv and mpv
+- zathura, nsxiv and mpv
 - conky and dunst
 - rofi
 - sxhkd
@@ -24,8 +24,12 @@ A simple and powerful archlinux setup, always kinda WIP!
 
 ### Todo
 
-- window manager and statusbar
-- add https://github.com/gokcehan/lf
+- window manager
+- statusbar
+- eslint
+- https://github.com/gokcehan/lf
+- install script
+- tmux
 - review all config files and bring them up to date
 
 ### Credits

@@ -30,6 +30,9 @@ xset s 300 && xss-lock physlock &
 # set wallpaper
 xwallpaper --zoom ~/.local/share/wallpaper.png &
 
+# nsxiv
+xrdb -load ~/.config/nsxiv/config &
+
 # start xob
 mkfifo /tmp/xob.fifo &
 tail -f /tmp/xob.fifo | xob &

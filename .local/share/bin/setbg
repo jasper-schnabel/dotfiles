@@ -11,7 +11,6 @@ Parameters:
 
 Flags:
   -h: this menu, --help shows this too
-  -i: set current file in imv as wallpaper
 
 Example:
   $ setbg /path/to/picture
@@ -20,7 +19,6 @@ EOF
 fi
 
 command -v xwallpaper >/dev/null || { echo "error: xwallpaper is not installed, exiting..."; exit 1; }
-command -v imv >/dev/null || { echo "error: imv is not installed, exiting..."; exit 1; }
 
 INPUT="$1"
 WALLPAPER="$HOME/.local/share/wallpaper.png"
@@ -29,12 +27,6 @@ if [ -d "$1" ]; then
 fi
 
 mkdir -p "$HOME/.local/share"
-
-if [ "$1" = "-i" ]; then
-  cp "$imv_current_file" "$WALLPAPER"
-  xwallpaper --zoom "$WALLPAPER"
-  notify-send -i "$WALLPAPER" "New wallpaper chosen."
-fi
 
 if [ -d "$INPUT" ]; then
   cp "$INPUT"/"$ACCIDENTALLY" "$WALLPAPER"
