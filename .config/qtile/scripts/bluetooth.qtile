@@ -1,0 +1,27 @@
+#! /bin/sh
+
+# bluetooth module
+
+# output the currently connected bluetooth device and status
+bluetooth () {
+	BLUETOOTH=`printf "%s\n" "quit" | bluetoothctl | grep quit | grep -Po "\[0;94m\[\K.*" | cut -d\] -f1`
+	BLUETOOTH_STATUS=`bluetoothctl show | awk '/Powered:/ {print $2}'`
+
+	# show currently connected bluetooth device
+	if [ "$BLUETOOTH" = "bluetooth" ]; then
+		BLUETOOTH_DEVICE=""
+	else
+		BLUETOOTH_DEVICE="$BLUETOOTH "
+	fi
+	
+	# check if bluetooth is running or not and output right icon based on this info
+	if [ "$BLUETOOTH_STATUS" = "yes" ]; then
+		BLUETOOTH_ICON=""
+	else
+		BLUETOOTH_ICON=""
+	fi
+
+  echo -n "$BLUETOOTH_ICON $BLUETOOTH_DEVICE"
+}
+
+bluetooth

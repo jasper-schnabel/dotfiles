@@ -53,4 +53,4 @@ greenclip daemon &
 mpd &
 
 # start wm
-# not chosen yet
+qtile start

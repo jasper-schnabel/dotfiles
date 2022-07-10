@@ -24,7 +24,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 
 ### Todo
 
-- window manager
+- finish qtile config
 - statusbar
 - eslint
 - https://github.com/gokcehan/lf
