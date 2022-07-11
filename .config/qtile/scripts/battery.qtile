@@ -1,36 +1,28 @@
 #! /bin/sh
 
-# battery module
+# battery module of qtile bar
+BATTERY=`cat /sys/class/power_supply/BAT0/capacity`
+BATTERY_STATUS=`cat /sys/class/power_supply/BAT0/status`
 
-# output battery status and capacity
-battery () {
-	BATTERY=`cat /sys/class/power_supply/BAT0/capacity`
-	BATTERY_STATUS=`cat /sys/class/power_supply/BAT0/status`
+if [ "$BATTERY_STATUS" = "Charging" ]; then
+  BATTERY_STATUS_ICON=" "
+else
+	BATTERY_STATUS_ICON=""
+fi
 
-# check if battery is charging or not and output right icon based on this info
-	if [ "$BATTERY_STATUS" = "Charging" ]; then
-    		BATTERY_STATUS_ICON=""
+BATTERY_ICON=`
+	if [ "$BATTERY" -ge "90" ] && [ "$BATTERY" -le "100" ]; then
+		echo ""
+	elif [ "$BATTERY" -ge "75" ] && [ "$BATTERY" -lt "90" ]; then
+		echo ""
+	elif [ "$BATTERY" -ge "50" ] && [ "$BATTERY" -lt "75" ]; then
+		echo ""
+	elif [ "$BATTERY" -ge "25" ] && [ "$BATTERY" -lt "50" ]; then
+		echo ""
+	elif [ "$BATTERY" -ge "15" ] && [ "$BATTERY" -lt "25" ]; then
+		echo ""
 	else
-		BATTERY_STATUS_ICON=""
-	fi
+		echo ""
+	fi`
 
-# output the right icon based on the batteries capacity
-	BATTERY_ICON=`
-		if [ "$BATTERY" -ge "90" ] && [ "$BATTERY" -le "100" ]; then
-			printf "%s\n" ""
-		elif [ "$BATTERY" -ge "75" ] && [ "$BATTERY" -lt "90" ]; then
-			printf "%s\n" ""
-		elif [ "$BATTERY" -ge "50" ] && [ "$BATTERY" -lt "75" ]; then
-			printf "%s\n" ""
-		elif [ "$BATTERY" -ge "25" ] && [ "$BATTERY" -lt "50" ]; then
-			printf "%s\n" ""
-		elif [ "$BATTERY" -ge "15" ] && [ "$BATTERY" -lt "25" ]; then
-			printf "%s\n" ""
-		else
-			printf "%s\n" ""
-		fi`
-
-	echo -n "$BATTERY_STATUS_ICON $BATTERY_ICON $BATTERY%"
-}
-
-battery
+echo -n "$BATTERY_STATUS_ICON$BATTERY_ICON $BATTERY%"

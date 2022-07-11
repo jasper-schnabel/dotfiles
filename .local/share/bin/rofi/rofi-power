@@ -14,7 +14,7 @@ fi
 command -v rofi >/dev/null || { echo "error: rofi is not installed, exiting..."; exit 1; }
 command -v physlock >/dev/null || { echo "error: physlock is not installed, exiting..."; exit 1; }
 
-case `printf "reboot\nshutdown\nsuspend\nlock\nexit" | rofi -dmenu -l 5 -p "power"` in
+case `echo "reboot\nshutdown\nsuspend\nlock\nexit" | rofi -dmenu -l 5 -p "power"` in
   "reboot")
     reboot;;
   "shutdown")

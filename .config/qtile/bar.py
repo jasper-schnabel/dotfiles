@@ -44,27 +44,14 @@ screens = [Screen(
       length = bar.STRETCH
     ),
     widget.TextBox(
-      text = "寧",
+      text = " ",
       foreground = colors[5],
-      mouse_callbacks = { "Button1": lambda: qtile.cmd_spawn("mpc prev") },
-      **widget_defaults
-    ),
-    widget.Mpd2(
-      foreground = colors[5],
-      play_states = { "play": "", "pause": "▶", "stop": "■" },
-      status_format = "{play_status}",
-      no_connection = "懶",
-      **widget_defaults
-    ),
-    widget.TextBox(
-      text = "嶺",
-      foreground = colors[5],
-      mouse_callbacks = { "Button1": lambda: qtile.cmd_spawn("mpc next") },
+      mouse_callbacks = { "Button1": lambda: qtile.cmd_spawn("alacritty -e ncmpcpp") },
       **widget_defaults
     ),
     widget.Mpd2(
       status_format = "{artist} - {title}",
-      no_connection = "",
+      no_connection = "No MPD Connection",
       **widget_defaults
     ),
     widget.Spacer(
@@ -79,7 +66,8 @@ screens = [Screen(
     widget.Wlan(
       foreground = colors[7],
       interface = "wlp4s0",
-      format = "{essid}",
+      format = "直  {essid}",
+      disconnected_message = "睊 ",
       **widget_defaults
     ),
     widget.GenPollText(

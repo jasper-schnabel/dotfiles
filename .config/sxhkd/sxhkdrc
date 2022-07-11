@@ -9,8 +9,8 @@ super + d
   rofi -show run
 
 # file manager
-# super + e
-#   file manager
+super + e
+  $TERMINAL -e lf
 
 # browser
 super + w

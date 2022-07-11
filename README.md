@@ -12,6 +12,7 @@ A simple and powerful archlinux setup, always kinda WIP!
 - conky and dunst
 - rofi
 - sxhkd
+- qtile
 
 ### Requirements
 
