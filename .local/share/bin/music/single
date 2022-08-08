@@ -1,0 +1,55 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
+  cat <<EOF
+\$ single [FLAGS] [SINGLE]
+Properly tag and rename singles (mp3)
+Prompts the user for artist, title, etc.
+
+Parameters:
+  \$1: single (mp3) to be tagged
+
+Flags:
+  -h: this menu, --help shows this too
+
+Example:
+  $ single 'good kid.mp3'
+    => moved to \$MUSIC_DIR/Singles/Kendrick Lamar - good kid.mp3
+EOF
+  exit 1
+fi
+
+command -v eyeD3 >/dev/null || { echo "error: eyeD3 is not installed, exiting..."; exit 1; }
+
+if [ "${1##*.}" != "mp3" ]; then
+  echo "error: $1 must be an '.mp3' file..."
+  exit 1
+fi
+
+# prompt for the tags
+echo -n "Artist: " && read ARTIST
+echo -n "Title: " && read TITLE
+echo -n "Feature: " && read FEATURE
+echo -n "Album: " && read ALBUM
+echo -n "Year: " && read YEAR
+echo -n "Genre: " && read GENRE
+echo -n "Path to the lyrics file: " && read LYRICS_FILE
+echo -n "Path to the cover file: " && read COVER_FILE
+
+# if there's a feature format and embed it into the title
+if [ -n "$FEATURE" ]; then
+  TITLE="$TITLE feat. $FEATURE"
+fi
+
+# set the default album to be 'Singles'
+if [ -z "$ALBUM" ]; then
+  ALBUM="Singles"
+fi
+
+# assign given tags and rename file correctly
+eyeD3 --artist "$ARTIST" --title "$TITLE" --album "$ALBUM" --recording-date "$YEAR" --genre "$GENRE" --add-lyrics "$LYRICS_FILE" --add-image "$COVER_FILE:FRONT_COVER" "$1"
+eyeD3 --rename "$ARTIST - $TITLE" "$1"
+
+# move the single to it's correct location
+MUSIC_DIR="$HOME/ct/music/imported-music/$ALBUM"
+mv -v "$ARTIST - $TITLE.mp3" "$MUSIC_DIR/$ARTIST - $TITLE.mp3"

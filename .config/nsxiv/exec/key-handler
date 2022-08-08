@@ -10,4 +10,6 @@ case "$1" in
     while read file; do gimp "$file" & done;;
   "b")
     while read file; do setbg "$file" & done;;
+  "d")
+    while read file; do rm -vf "$file" & done;;
 esac

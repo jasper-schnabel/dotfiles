@@ -1,5 +1,4 @@
 # qtile config
-# TODO: applications spawend with Group.Match should be focused on spawn
 
 # imports
 from libqtile.lazy import lazy
